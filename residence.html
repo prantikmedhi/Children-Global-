@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residence Services - Children Global | UAE Residency Solutions</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2b4c7e;
+            --secondary-color: #567ebb;
+            --light-color: #ffffff;
+            --dark-color: #1a2a3a;
+            --gray-color: #f8f9fa;
+            --text-color: #333333;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+            --transition: all 0.3s ease;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --radius: 5px;
+            --highlight-color: #FFD700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--light-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo img {
+            height: 60px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            position: relative;
+        }
+
+        .nav-menu a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: var(--text-color);
+            font-weight: 500;
+            font-family: var(--font-heading);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            padding: 1rem;
+        }
+
+        /* Hero Section */
+        .residence-hero {
+            background: linear-gradient(rgba(42, 76, 126, 0.8), rgba(42, 76, 126, 0.8)), url('images/residence-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-color);
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .residence-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .residence-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .underline {
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 0 auto 1.5rem;
+        }
+
+        /* Visa Types */
+        .visa-types {
+            background-color: var(--gray-color);
+        }
+
+        .visa-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .visa-card {
+            background-color: var(--light-color);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .visa-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .visa-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Benefits Section */
+        .benefits-list {
+            list-style: none;
+        }
+
+        .benefits-list li {
+            margin-bottom: 1.5rem;
+            padding-left: 3rem;
+            position: relative;
+        }
+
+        .benefits-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 1rem;
+            top: 0.2rem;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(42, 76, 126, 0.9), rgba(42, 76, 126, 0.9)), url('images/cta-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-color);
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+
+        /* New Golden Visa Section */
+        .golden-visa {
+            background-color: var(--light-color);
+            border: 1px solid var(--highlight-color);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+        }
+
+        .golden-visa h3 {
+            color: var(--highlight-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .golden-visa h3 i {
+            margin-right: 1rem;
+        }
+
+        .golden-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .golden-benefits, .golden-eligibility {
+            padding: 1rem;
+        }
+
+        .golden-list {
+            list-style: none;
+        }
+
+        .golden-list li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .golden-list li::before {
+            content: '\f054';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0.5rem;
+            color: var(--highlight-color);
+        }
+
+        /* Business Formation Section */
+        .business-formation {
+            background-color: var(--gray-color);
+            padding: 3rem;
+            border-radius: var(--radius);
+        }
+
+        .business-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .business-points {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .business-card {
+            background-color: var(--light-color);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Banner Carousel */
+        .banner-carousel {
+            margin: 3rem 0;
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            padding: 2rem;
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .banner-item {
+            display: none;
+            animation: fadeIn 1s;
+        }
+
+        .banner-item.active {
+            display: block;
+        }
+
+        .banner-item h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .banner-item p {
+            font-size: 1.2rem;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                background-color: var(--light-color);
+                flex-direction: column;
+                transition: var(--transition);
+                z-index: 999;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .residence-hero {
+                padding: 4rem 0;
+            }
+
+            .residence-hero h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .golden-grid, .business-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .residence-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .residence-hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="logo.png" alt="Children Global Logo">
+                    </a>
+                </div>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="factory.html">Factory</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Banner Carousel -->
+    <section class="section">
+        <div class="container banner-carousel">
+            <div class="banner-item active">
+                <h3><i class="fas fa-passport"></i> Residency, License, Factory – All in One Place</h3>
+                <p>Comprehensive solutions for your UAE establishment</p>
+            </div>
+            <div class="banner-item">
+                <h3><i class="fas fa-clock"></i> Save Cost. Save Time. Launch Faster.</h3>
+                <p>Efficient processes to get you operational quickly</p>
+            </div>
+            <div class="banner-item">
+                <h3><i class="fas fa-map-marker-alt"></i> Strategically Located – Close to Ports, Warehouses, and Clients</h3>
+                <p>Prime locations for business success</p>
+            </div>
+            <div class="banner-item">
+                <h3><i class="fas fa-balance-scale"></i> We Handle Legal, Safety & Compliance – You Focus on Growth</h3>
+                <p>Complete peace of mind for your business</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Formation Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Comprehensive Business Formation</h2>
+                <div class="underline"></div>
+                <p>We provide end-to-end assistance in establishing your business in the UAE</p>
+            </div>
+            
+            <div class="business-formation">
+                <div class="business-grid">
+                    <div>
+                        <h3>Our Business Setup Services Include:</h3>
+                        <div class="business-points">
+                            <div class="business-card">
+                                <h4><i class="fas fa-gavel"></i> Legal Compliance</h4>
+                                <p>Adherence to all local laws and regulations with proper documentation</p>
+                            </div>
+                            <div class="business-card">
+                                <h4><i class="fas fa-shield-alt"></i> Safety & Security</h4>
+                                <p>Implementation of robust safety protocols for your business operations</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="business-points">
+                            <div class="business-card">
+                                <h4><i class="fas fa-chart-line"></i> Risk Mitigation</h4>
+                                <p>Strategic planning to minimize potential risks in your business venture</p>
+                            </div>
+                            <div class="business-card">
+                                <h4><i class="fas fa-map-marked-alt"></i> Local Market Expertise</h4>
+                                <p>In-depth knowledge of the UAE business landscape and opportunities</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem; display: flex; justify-content: space-between; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 250px; margin: 1rem; padding: 1rem; background: #f1f1f1; border-radius: var(--radius);">
+                        <h4><i class="fas fa-check-circle" style="color: var(--primary-color);"></i> Cost-effective setup</h4>
+                        <p>Avoid unnecessary fees and delays — we know the local pricing, vendors, and laws</p>
+                    </div>
+                    <div style="flex: 1; min-width: 250px; margin: 1rem; padding: 1rem; background: #f1f1f1; border-radius: var(--radius);">
+                        <h4><i class="fas fa-check-circle" style="color: var(--primary-color);"></i> Risk & security management</h4>
+                        <p>We help you operate safely, legally, and securely from day one</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Golden Visa Section -->
+    <section class="section">
+        <div class="container">
+            <div class="golden-visa">
+                <h3><i class="fas fa-award"></i> UAE Golden Visa for Entrepreneurs</h3>
+                <p>The UAE Golden Visa offers long-term residency benefits for business owners, investors, and exceptional talents. Our team will guide you through the entire application process.</p>
+                
+                <div class="golden-grid">
+                    <div class="golden-eligibility">
+                        <h4>Eligibility Requirements:</h4>
+                        <ul class="golden-list">
+                            <li>Ownership or partnership in a UAE-based startup</li>
+                            <li>Annual revenue of at least AED 1 million</li>
+                            <li>Approval of business plans by relevant UAE authorities</li>
+                            <li>Investment in specific sectors (technology, healthcare, etc.)</li>
+                            <li>Specialized talents in priority fields may qualify</li>
+                        </ul>
+                    </div>
+                    <div class="golden-benefits">
+                        <h4>Key Benefits:</h4>
+                        <ul class="golden-list">
+                            <li>10-year renewable residency</li>
+                            <li>100% ownership of mainland companies</li>
+                            <li>No personal income tax</li>
+                            <li>Full profit repatriation</li>
+                            <li>Family sponsorship (spouse, children, parents)</li>
+                            <li>Access to premium healthcare and education</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visa Types Section -->
+    <section class="section visa-types">
+        <div class="container">
+            <div class="section-header">
+                <h2>Residency Visa Options</h2>
+                <div class="underline"></div>
+                <p>Comprehensive solutions for establishing your life in the UAE</p>
+            </div>
+            <div class="visa-grid">
+                <div class="visa-card">
+                    <div class="visa-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Employment Visa</h3>
+                    <p>Secure your UAE residency through employment with our assistance in visa processing and documentation.</p>
+                </div>
+                <div class="visa-card">
+                    <div class="visa-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Investor Visa</h3>
+                    <p>Establish your residency through business investment with our expert guidance on requirements and processes.</p>
+                </div>
+                <div class="visa-card">
+                    <div class="visa-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Property Visa</h3>
+                    <p>Obtain residency through property ownership with our assistance in meeting all legal requirements.</p>
+                </div>
+                <div class="visa-card">
+                    <div class="visa-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Golden Visa</h3>
+                    <p>Long-term residency for investors, entrepreneurs, and specialized talents with exceptional benefits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Benefits of UAE Residency</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="benefits-content">
+                <ul class="benefits-list">
+                    <li><strong>Tax-Free Living:</strong> No personal income tax in the UAE</li>
+                    <li><strong>Global Mobility:</strong> Visa-free or visa-on-arrival access to numerous countries</li>
+                    <li><strong>Safety & Security:</strong> One of the safest countries in the world</li>
+                    <li><strong>World-Class Healthcare:</strong> Access to premium medical facilities</li>
+                    <li><strong>Quality Education:</strong> International schools and universities</li>
+                    <li><strong>Business Opportunities:</strong> Thriving economy with diverse sectors</li>
+                    <li><strong>Lifestyle:</strong> Luxury living with year-round sunshine</li>
+                    <li><strong>Family Sponsorship:</strong> Bring your entire family to enjoy UAE benefits</li>
+                    <li><strong>Asset Protection:</strong> Secure environment for your investments</li>
+                    <li><strong>Strategic Location:</strong> Gateway between East and West</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Secure Your UAE Residency?</h2>
+            <p>Our experts will guide you through every step of the residency application process.</p>
+            <a href="contact.html" class="btn btn-primary">Begin Your Application</a>
+        </div>
+    </section>
+
+    <script>
+        // Mobile Navigation Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            const menuIcon = menuToggle.querySelector('i');
+
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                
+                // Toggle between hamburger and close icon
+                if (navMenu.classList.contains('active')) {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-times');
+                } else {
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+
+            // Close menu when clicking on a link (for mobile)
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        menuIcon.classList.remove('fa-times');
+                        menuIcon.classList.add('fa-bars');
+                    }
+                });
+            });
+
+            // Banner Carousel Animation
+            const banners = document.querySelectorAll('.banner-item');
+            let currentBanner = 0;
+            
+            function rotateBanners() {
+                banners.forEach(banner => banner.classList.remove('active'));
+                currentBanner = (currentBanner + 1) % banners.length;
+                banners[currentBanner].classList.add('active');
+            }
+            
+            // Rotate every 5 seconds
+            setInterval(rotateBanners, 5000);
+        });
+    </script>
+</body>
+</html>

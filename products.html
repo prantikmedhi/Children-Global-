@@ -1,0 +1,559 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Children Global's premium baby product range including car seats, strollers, play yards, highchairs, swings, carriers, and nursery items - all made in UAE.">
+    <meta name="keywords" content="baby car seats, baby strollers, play yards, highchairs, baby swings, baby carriers, nursery items, UAE manufacturer">
+    <title>Products - Children Global | Premium Baby Product Manufacturer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        /* Products Page Specific Styles */
+        .products-hero {
+            background: linear-gradient(rgba(42, 76, 126, 0.8), rgba(42, 76, 126, 0.8)), url('images/products-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-color);
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .filter-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+            gap: 1rem;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
+            background-color: var(--gray-color);
+            color: var(--text-color);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .product-item {
+            background-color: var(--light-color);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-img {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-item:hover .product-img img {
+            transform: scale(1.05);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .badge-new {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+        }
+
+        .badge-sale {
+            background-color: var(--danger-color);
+            color: var(--light-color);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-category {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .product-features {
+            margin: 1rem 0;
+        }
+
+        .product-features li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .product-features i {
+            position: absolute;
+            left: 0;
+            top: 0.3rem;
+            color: var(--primary-color);
+        }
+
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+
+        .category-section {
+            padding: 5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-section:last-child {
+            border-bottom: none;
+        }
+
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: var(--light-accent);
+            color: var(--primary-color);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .category-description {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .sale-price {
+            color: var(--danger-color);
+            font-weight: 600;
+            margin-left: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .regular-price {
+            text-decoration: line-through;
+            color: var(--text-light);
+        }
+
+        .category-link {
+            font-weight: 600;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .category-link i {
+            margin-left: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .category-link:hover i {
+            transform: translateX(5px);
+        }
+
+        @media screen and (max-width: 1024px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .category-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .category-link {
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="logo.png" alt="Children Global Logo">
+                    </a>
+                </div>
+                <nav>
+                    <div class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li class="dropdown">
+                            <a href="products.html" class="active">Products <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="products.html#car-seats">Baby Car Seats</a></li>
+                                <li><a href="products.html#strollers">Baby Strollers</a></li>
+                                <li><a href="products.html#play-yards">Play Yards</a></li>
+                                <li><a href="products.html#highchairs">Highchairs</a></li>
+                                <li><a href="products.html#swings">Swings</a></li>
+                                <li><a href="products.html#carriers">Carriers</a></li>
+                                <li><a href="products.html#nursery">Nursery</a></li>
+
+                            </ul>
+                        </li>
+                        <li><a href="factory.html">Factory</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="products-hero">
+        <div class="container">
+            <h1>Our Products</h1>
+            <p>Premium quality baby products manufactured to international safety standards</p>
+        </div>
+    </section>
+
+    <!-- Products Filter -->
+    <section class="products-filter">
+        <div class="container">
+            <div class="section-header">
+                <h2>Explore Our Products</h2>
+                <div class="underline"></div>
+                <p>Browse our wide range of premium baby products designed for safety and comfort</p>
+            </div>
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">All Products</button>
+                <button class="filter-btn" data-filter="car-seat">Car Seats</button>
+                <button class="filter-btn" data-filter="stroller">Strollers</button>
+                <button class="filter-btn" data-filter="play-yard">Play Yards</button>
+                <button class="filter-btn" data-filter="highchair">Highchairs</button>
+                <button class="filter-btn" data-filter="swing">Swings</button>
+                <button class="filter-btn" data-filter="carrier">Carriers</button>
+                <button class="filter-btn" data-filter="nursery">Nursery</button>
+            
+            </div>
+        </div>
+    </section>
+
+    <!-- Car Seats Section -->
+    <section id="car-seats" class="category-section">
+        <div class="container">
+            <div class="category-header">
+                <div>
+                    <h2>Baby Car Seats</h2>
+                    <span class="category-badge">ASTM & EN Certified</span>
+                </div>
+              
+            </div>
+            <p class="category-description">Our car seats are engineered to provide maximum protection and comfort for your child. All models are rigorously tested and certified to meet or exceed ASTM and EN safety standards.</p>
+            
+            <div class="product-grid">
+                <div class="product-item car-seat">
+                    <div class="product-img">
+                        <img src="3in1car-seat.png" alt="Infant Car Seat">
+                        <span class="product-badge badge-new">New</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">3-in-1 Car Seat</span>
+                        <h3>3 in 1 Car Seat</h3>
+                        <ul class="product-features">
+
+
+                            <li><i class="fas fa-check"></i> Side impact protection</li>
+                            <li><i class="fas fa-check"></i> ASTM & EN certified</li>
+                        </ul>
+
+                    </div>
+                </div>
+                
+                <div class="product-item car-seat">
+                    <div class="product-img">
+                        <img src="DLX-4in1.jpg" alt="DLX-4in1 Car Seat">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">DLX-4in1.jpg Car Seat</span>
+                        <h3>DLX-4in1 Car seat</h3>
+                        <ul class="product-features">
+
+                            <li><i class="fas fa-check"></i> ASTM & EN certified</li>
+                        </ul>
+
+                    </div>
+                </div>
+                
+                <div class="product-item car-seat">
+                    <div class="product-img">
+                        <img src="Infant-car-Seat.jpg" alt="Infant Car Seat">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Infant-car-Seat</span>
+                        <h3>Infant Car Seat </h3>
+                        <ul class="product-features">
+
+                            <li><i class="fas fa-check"></i> Adjustable headrest</li>
+                      
+                            <li><i class="fas fa-check"></i> ASTM & EN certified</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strollers Section -->
+    <section id="strollers" class="category-section" style="background-color: var(--gray-color);">
+        <div class="container">
+            <div class="category-header">
+                <div>
+                    <h2>Baby Strollers</h2>
+                    <span class="category-badge">Premium Quality</span>
+                </div>
+
+            </div>
+            <p class="category-description">Our strollers combine style, safety, and practicality. Designed with both parents and babies in mind, they offer exceptional maneuverability and comfort for daily use.</p>
+            
+            <div class="product-grid">
+                <div class="product-item stroller">
+                    <div class="product-img">
+                        <img src="Nest2Grow.jpg" alt="Travel System Stroller">
+                        <span class="product-badge badge-new">New</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">stroller</span>
+                        <h3>Nest2Grow Stroller</h3>
+                        <ul class="product-features">
+             <li><i class="fas fa-check"></i> All-terrain wheels</li>
+                            <li><i class="fas fa-check"></i> Adjustable handlebar</li>
+                        </ul>
+
+                    </div>
+                </div>
+                
+                <div class="product-item stroller">
+                    <div class="product-img">
+                        <img src="Graco-premier.jpg" alt="Garaco Premier">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Lightweight Stroller</span>
+                        <h3>Ultra-Compact Lightweight Stroller</h3>
+                        <ul class="product-features">
+
+
+                       
+                            <li><i class="fas fa-check"></i> UV-protection canopy</li>
+                        </ul>
+                  
+                    </div>
+                </div>
+                
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Play Yards Section -->
+    <section id="play-yards" class="category-section">
+        <div class="container">
+            <div class="category-header">
+                <div>
+                    <h2>Play Yards</h2>
+                    <span class="category-badge">First in the Region</span>
+                </div>
+
+            </div>
+            <p class="category-description">As the first manufacturer of play yards in the region, we've perfected our designs to offer safe, comfortable spaces for babies to play and rest. Our play yards are known for their durability and ease of use.</p>
+            
+            <div class="product-grid">
+                <div class="product-item play-yard">
+                    <div class="product-img">
+                        <img src="playard1.jpg" alt="Pack'n play on the go zip playard">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Standard Play </span>
+                        <h3>Pack'n play on the go zip playard</h3>
+                        <ul class="product-features">
+
+
+                            <li><i class="fas fa-check"></i> Sturdy frame construction</li>
+                            <li><i class="fas fa-check"></i> Carry bag included</li>
+                        </ul>
+                  
+                    </div>
+                </div>
+                
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional product categories sections would follow the same pattern -->
+    <!-- For brevity, I'll just include the "Sale" section as the last example -->
+
+
+
+    <!-- OEM & ODM Services -->
+    <section class="oem-odm">
+        <div class="container">
+            <div class="section-header">
+                <h2>OEM & ODM Services</h2>
+                <div class="underline"></div>
+                <p>Partner with us to create custom-designed baby products for your brand</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Children Global offers complete OEM (Original Equipment Manufacturing) and ODM (Original Design Manufacturing) services for baby product brands worldwide. With our state-of-the-art manufacturing facilities in JAFZA – Dubai, we can help bring your baby product ideas to life.</p>
+                    <ul class="about-list">
+                        <li><i class="fas fa-check-circle"></i> Custom product design and development</li>
+                        <li><i class="fas fa-check-circle"></i> Compliance with ASTM and EN safety standards</li>
+                        <li><i class="fas fa-check-circle"></i> High-quality materials and components</li>
+                        <li><i class="fas fa-check-circle"></i> Efficient production timelines</li>
+                        <li><i class="fas fa-check-circle"></i> Flexible minimum order quantities</li>
+                        <li><i class="fas fa-check-circle"></i> Quality assurance at every step</li>
+                        <li><i class="fas fa-check-circle"></i> Global logistics support</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Contact Us About OEM/ODM</a>
+                </div>
+                <div class="about-image">
+                    <img src="oem-odm-services.jpg" alt="OEM & ODM Services">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Interested in Our Products?</h2>
+                <p>Contact us today to discuss your baby product manufacturing needs</p>
+                <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Children Global Logo">
+                    <p>Made in UAE - Trusted Worldwide</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="products.html">Products</a></li>
+                            <li><a href="factory.html">Factory</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="products.html#car-seats">Baby Car Seats</a></li>
+                            <li><a href="products.html#strollers">Baby Strollers</a></li>
+                            <li><a href="products.html#play-yards">Play Yards</a></li>
+                            <li><a href="products.html#highchairs">Highchairs</a></li>
+                            <li><a href="products.html#swings">Swings</a></li>
+                            <li><a href="products.html#carriers">Carriers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-phone"></i> Tel: +971 (4) 882 3939</li>
+                            <li><i class="fas fa-mobile-alt"></i> Cell: +971 (55) 1000 939</li>
+                            <li><i class="fab fa-whatsapp"></i> WhatsApp: +971 (50) 888 1030</li>
+                            <li><i class="fas fa-envelope"></i> info@childrenglobal.com</li>
+                            <li><i class="fas fa-id-card"></i> Trade License: 8397257</li>
+                            <li><i class="fas fa-mailbox"></i> P.O. Box: 888888</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Children Global. All Rights Reserved.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/jafzaDXB" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/jafzadubai" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://ae.linkedin.com/company/jafza" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/jafzadubai" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
