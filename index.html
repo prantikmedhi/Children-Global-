@@ -1,0 +1,2154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Children Global - The first and only baby gear manufacturer in the GCC. Premium baby car seats, strollers, play yards, and more, all made in UAE with ASTM and EN certifications.">
+    <meta name="keywords" content="baby products manufacturer, car seats, strollers, play yards, UAE manufacturer, ASTM certified, EN certified, baby gear">
+    <title>Children Global - Premium Baby Product Manufacturer in UAE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+ <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        
+/* Hero Slider Styles */
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    max-height: 800px;
+    overflow: hidden;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.slide-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.slide-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.slide-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.slide-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #F2F2F2;
+}
+
+.slide-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    color: #FFFFFF;
+}
+
+.slide-image img {
+    opacity: 0.5; /* 0.2 = 80% opacity, adjust between 0-1 */
+    transition: opacity 0.3s ease; /* Smooth change */
+}
+/* Navigation Arrows */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.slider-arrow:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.prev-arrow {
+    left: 30px;
+}
+
+.next-arrow {
+    right: 30px;
+}
+
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .slide-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .slide-content p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-slider {
+        height: 70vh;
+    }
+    
+    .slide-content h2 {
+        font-size: 2rem;
+    }
+    
+    .slide-content p {
+        font-size: 1rem;
+    }
+    
+    .slider-arrow {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .prev-arrow {
+        left: 15px;
+    }
+    
+    .next-arrow {
+        right: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-slider {
+        height: 60vh;
+    }
+    
+    .slide-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .slide-content {
+        padding: 1rem;
+    }
+    
+    .slider-dots {
+        bottom: 15px;
+    }
+}
+
+/* Strategic Advantage Section */
+.strategic-advantage {
+    background: #f8f9fa;
+    padding: 5rem 0;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.advantage-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 3rem;
+    margin: 3rem auto;
+    max-width: 900px;
+    flex-wrap: wrap;
+}
+
+.advantage-card {
+    flex: 1;
+    min-width: 250px;
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid transparent;
+}
+
+.advantage-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.advantage-icon.negative {
+    color: #e53935;
+}
+
+.advantage-icon.positive {
+    color: #2e7d32;
+}
+
+.advantage-rate {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+.advantage-card:nth-child(1) .advantage-rate {
+    color: #e53935;
+}
+
+.advantage-card:nth-child(3) .advantage-rate {
+    color: #2e7d32;
+}
+
+.advantage-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.advantage-card:nth-child(1) .advantage-badge {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.advantage-card:nth-child(3) .advantage-badge {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.vs-circle {
+    width: 60px;
+    height: 60px;
+    background: #333;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.advantage-cta {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+}
+
+/* Data Visualization Style */
+.highlighted-item.data-item {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    flex-wrap: wrap;
+}
+
+.data-visual {
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+}
+
+.data-bar {
+    width: 60px;
+    margin: 0 auto;
+    position: relative;
+    background: #eee;
+    border-radius: 4px 4px 0 0;
+    transition: height 1s ease;
+}
+
+.data-bar.negative {
+    background: linear-gradient(to top, #ffcdd2, #e53935);
+}
+
+.data-bar.positive {
+    background: linear-gradient(to top, #c8e6c9, #2e7d32);
+}
+
+.data-bar span {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.data-label {
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.data-content {
+    flex: 2;
+    min-width: 300px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .advantage-grid {
+        gap: 1.5rem;
+    }
+    
+    .vs-circle {
+        margin: 1rem auto;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .highlighted-item.data-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .data-content {
+        text-align: center;
+    }
+}
+
+
+/* Certifications Section */
+.certifications {
+    background: #fff;
+    padding: 5rem 0;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 3rem auto;
+}
+
+.cert-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.cert-item:hover {
+    transform: translateY(-5px);
+}
+
+.cert-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.cert-item span {
+    font-weight: 600;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .cert-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .cert-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* CEO contact button */
+.ceo-contact-btn {
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.ceo-contact-btn .btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.ceo-contact-btn .btn i {
+    margin-right: 8px;
+    transition: all 0.3s ease;
+}
+
+.ceo-contact-btn .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ceo-contact-btn .btn:hover i {
+    transform: translateX(3px);
+}
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .category-slider {
+        gap: 1rem;
+        padding: 0.5rem 1rem;
+    }
+    .category-item {
+        width: 80px;
+    }
+    .category-logo {
+        width: 60px;
+        height: 60px;
+    }
+    .category-logo img {
+        width: 40px;
+        height: 40px;
+    }
+} 
+
+
+
+
+</style>
+    </style>
+    <style>
+    .manufacturing-options {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+    
+    .manufacturing-option {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.8rem 1rem;
+        text-align: center;
+    }
+    
+    .manufacturing-option i {
+        font-size: 1.2rem;
+    }
+    
+    @media (max-width: 768px) {
+        .manufacturing-options {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        
+        .manufacturing-option {
+            flex: 1;
+            min-width: 120px;
+        }
+    }
+</style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="logo.png" alt="Children Global Logo">
+                    </a>
+                </div>
+                <nav>
+                    <div class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                                                <li><a href="products.html">Products</a></li>
+
+                        <li><a href="factory.html">Factory</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    
+    
+<!-- Add this section right after the <header> and before the <section class="hero"> -->
+<section class="hero-slider">
+    <div class="slider-container">
+        <!-- Slide 1: Tariff Advantage -->
+        <div class="slide active">
+            <div class="slide-content">
+                <h2>Export with Ease: Only 10% Tariff to the United States</h2>
+                <p>Benefit from our competitive tariff rates, making your products more accessible in the U.S. market.</p>
+                <a href="contact.html" class="btn btn-primary">Learn More</a>
+            </div>
+            <div class="slide-image">
+                <img src="slide1-tariff.jpg" alt="Cargo ships with USA labels">
+            </div>
+        </div>
+        
+        <!-- Slide 2: Why Choose Children Global -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Children Global: Your Partner in Innovation and Quality</h2>
+                <p>From concept to creation, we specialize in children's products that meet global standards.</p>
+                <a href="about.html" class="btn btn-primary">About Us</a>
+            </div>
+            <div class="slide-image">
+                <img src="slide2-products.jpg" alt="Showcase of children's products">
+            </div>
+        </div>
+        
+        <!-- Slide 3: Jebel Ali Free Zone -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Jebel Ali Free Zone: Ranked #1 Globally</h2>
+                <p>Home to over 10,700 businesses, offering unparalleled logistics and industrial infrastructure.</p>
+                <a href="factory.html" class="btn btn-primary">Our Factory</a>
+            </div>
+            <div class="slide-image">
+                <img src="slide3-jafza.jpg" alt="Aerial view of Jebel Ali Port">
+            </div>
+        </div>
+        
+        <!-- Slide 4: Dubai Logistics Hub -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Dubai: Connecting You to the World</h2>
+                <p>Leverage Dubai's strategic location and world-class infrastructure for seamless global trade.</p>
+                <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            </div>
+            <div class="slide-image">
+                <img src="slide4-dubai.jpg" alt="Dubai skyline with logistics imagery">
+            </div>
+        </div>
+        
+        <!-- Slide 5: Quality Commitment -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Certified Excellence in Every Product</h2>
+                <p>Adhering to international standards, we ensure quality and innovation in all our offerings.</p>
+                <a href="products.html" class="btn btn-primary">Our Products</a>
+            </div>
+            <div class="slide-image">
+                <img src="slide5-certifications.jpg" alt="Certifications and product designs">
+            </div>
+        </div>
+        
+        <!-- Slide 6: Clarion Logistics -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Efficient Shipping and Storage Solutions with Clarion</h2>
+                <p>Benefit from Clarion's extensive logistics network and state-of-the-art warehousing facilities.</p>
+                <a href="#logistics" class="btn btn-primary">Logistics Info</a>
+            </div>
+            <div class="slide-image">
+                <img src="slide6-clarion.jpg" alt="Clarion">
+            </div>
+        </div>
+        
+        <!-- Slide 7: Distributor Network -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Global Distribution Made Simple</h2>
+                <p>We assist in finding the right distributors to bring your products to new markets.</p>
+                <a href="contact.html" class="btn btn-primary">Expand Your Reach</a>
+            </div>
+            <div class="slide-image">
+                <img src="slide7-distribution.jpg" alt="Global distribution map">
+            </div>
+        </div>
+    </div>
+    
+    </div>
+    </section>
+    <!-- Navigation Arrows -->
+    <button class="slider-arrow prev-arrow" aria-label="Previous slide">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="slider-arrow next-arrow" aria-label="Next slide">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+    
+    <!-- Navigation Dots -->
+    <div class="slider-dots">
+        <!-- Dots will be added via JavaScript -->
+    </div>
+    </section>
+    
+<!-- Big Logo Categories Section -->
+<section class="big-logo-categories">
+    <div class="container">
+        <div class="categories-grid">
+            <!-- Manufacture -->
+            <div class="category-card">
+                <div class="category-logo">
+                    <img src="Manufacturing.png" alt="Manufacture">
+                </div>
+                <h2>Manufacture</h2>
+                <p>Produce your products with excellence in our world-class, high-tech factories—quality and precision guaranteed.</p>
+                <div class="manufacturing-options">
+                    <a href="#children-products" class="btn btn-outline manufacturing-option" data-category="children">
+                        <i class="fas fa-baby"></i> Children Products
+                    </a>
+                    <a href="#other-products" class="btn btn-outline manufacturing-option" data-category="other">
+                        <i class="fas fa-home"></i> Other Products
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Factory -->
+            <div class="category-card">
+                <div class="category-logo">
+                    <img src="Factory.png" alt="Factory">
+                </div>
+                <h2>Factory</h2>
+                <p>We design, build, and establish your very own factory—customized for your brand's success.</p>
+                <a href="factory.html" class="btn btn-outline">Visit Factory</a>
+            </div>
+            
+            <!-- Distribution -->
+            <div class="category-card">
+                <div class="category-logo">
+                    <img src="Distribution.png" alt="Distribution">
+                </div>
+                <h2>Distribution</h2>
+                <p>Expand your reach effortlessly—we distribute your products in regions where you have no current presence.</p>
+                <a href="distribution.html" class="btn btn-outline">Explore Logistics</a>
+            </div>
+            
+            <!-- Retail -->
+            <div class="category-card">
+                <div class="category-logo">
+                    <img src="Retail.png" alt="Retail">
+                </div>
+                <h2>Retail</h2>
+                <p>Showcase your brand globally—your products placed in leading retail stores across the world.</p>
+                <a href="retail.html" class="btn btn-outline">Find Retailers</a>
+            </div>
+            
+            <!-- Freight & Storage -->
+            <div class="category-card">
+                <div class="category-logo">
+                    <img src="freight&storage.png" alt="Freight & Storage">
+                </div>
+                <h2>Freight & Storage</h2>
+                <p>From safe warehousing to fast global shipping—we handle your product logistics from end to end.</p>
+                <a href="freight&storage.html" class="btn btn-outline">Logistics Info</a>
+            </div>
+            
+            <!-- Business -->
+            <div class="category-card">
+                <div class="category-logo">
+                    <img src="Business.png" alt="Business">
+                </div>
+                <h2>Business</h2>
+                <p>We set up your entire business structure—fast, reliable, and tailored to your vision.</p>
+                <a href="business.html" class="btn btn-outline">Contact Sales</a>
+            </div>
+            
+            <!-- Residence -->
+            <div class="category-card">
+                <div class="category-logo">
+                    <img src="Residence.png" alt="Residence">
+                </div>
+                <h2>Residence</h2>
+                <p>Start a new life with ease—we help you secure your residency and lifestyle setup anywhere in the world.</p>
+                <a href="residence.html" class="btn btn-outline">View Options</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Big Logo Categories Section - Fully Responsive */
+    .big-logo-categories {
+        padding: 4rem 1rem;
+        background: #fff;
+    }
+    
+    .big-logo-categories .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .categories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        justify-content: center;
+        gap: 2rem;
+    }
+    
+    .category-card {
+        text-align: center;
+        padding: 2rem;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        background: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+    
+    .category-logo {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 1.5rem;
+        border-radius: 50%;
+        background: #f8f9fa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid #e0e0e0;
+        transition: all 0.3s ease;
+    }
+    
+    .category-card:hover .category-logo {
+        border-color: #2b4c7e;
+        background: #fff;
+    }
+    
+    .category-logo img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        transition: all 0.3s ease;
+    }
+    
+    .category-card:hover .category-logo img {
+        transform: scale(1.1);
+    }
+    
+    .category-card h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: #333;
+        transition: all 0.3s ease;
+    }
+    
+    .category-card:hover h2 {
+        color: #2b4c7e;
+    }
+    
+    .category-card p {
+        margin: 0 auto 1.5rem;
+        color: #666;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    .btn-outline {
+        display: inline-block;
+        padding: 0.8rem 2rem;
+        border: 2px solid #2b4c7e;
+        color: #2b4c7e;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+    
+    .btn-outline:hover {
+        background: #2b4c7e;
+        color: white;
+        transform: translateY(-2px);
+    }
+    
+    .manufacturing-options {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+    
+    .manufacturing-option {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.8rem 1rem;
+        text-align: center;
+    }
+    
+    .manufacturing-option i {
+        font-size: 1.2rem;
+    }
+    
+    /* Desktop Specific (3 columns) */
+    @media (min-width: 1025px) {
+        .categories-grid {
+            grid-template-columns: repeat(3, minmax(280px, 1fr));
+        }
+        
+        .category-card:last-child:nth-child(3n+1) {
+            grid-column: 2 / span 1;
+        }
+    }
+    
+    /* Tablet (2 columns) */
+    @media (max-width: 1024px) and (min-width: 769px) {
+        .categories-grid {
+            grid-template-columns: repeat(2, minmax(280px, 1fr));
+        }
+        
+        .category-card:last-child:nth-child(odd) {
+            grid-column: 1 / -1;
+            max-width: 320px;
+        }
+    }
+    
+    /* Mobile (1 centered column) */
+    @media (max-width: 768px) {
+        .categories-grid {
+            grid-template-columns: minmax(280px, 320px);
+        }
+        
+        .manufacturing-options {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        
+        .manufacturing-option {
+            flex: 1;
+            min-width: 120px;
+        }
+    }
+    
+    /* Hover Effects */
+    .category-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+</style>
+   
+    <!-- Add after Features section -->
+<section class="strategic-advantage">
+    <div class="container">
+        <div class="section-header">
+            <h2>Strategic Trade Advantage</h2>
+            <div class="underline"></div>
+            <p>Leverage Dubai's favorable trade agreements for maximum profitability</p>
+        </div>
+        
+        <div class="advantage-grid">
+            <div class="advantage-card">
+                <div class="advantage-icon negative">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h3>China to USA</h3>
+                <div class="advantage-rate">270%</div>
+                <p>Current import duty rate</p>
+                <div class="advantage-badge">Costly</div>
+            </div>
+            
+           
+            <div class="advantage-card">
+                <div class="advantage-icon positive">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>Dubai to USA</h3>
+                <div class="advantage-rate">10%</div>
+                <p>With Children Global</p>
+                <div class="advantage-badge">Massive Savings</div>
+            </div>
+        </div>
+        
+        <div class="advantage-cta">
+            <p><strong>260% lower duties</strong> when sourcing through our JAFZA facility</p>
+
+        </div>
+    </div>
+</section>
+
+<section class="certifications">
+    <div class="container">
+        <div class="section-header">
+            <h2>Certified Excellence & Compliance</h2>
+            <div class="underline"></div>
+            <p>Audited and approved by leading global authorities</p>
+        </div>
+        
+        <div class="cert-grid">
+            <!-- Row 1 -->
+            <div class="cert-item">
+                <img src="astm-international.svg" alt="ASTM Certified">
+                <span>ASTM Certified</span>
+            </div>
+            <div class="cert-item">
+                <img src="cert-en.png" alt="EN Standards">
+                <span>EN Standards</span>
+            </div>
+            <div class="cert-item">
+                <img src="cert-bsci.png" alt="BSCI Compliant">
+                <span>BSCI Compliant</span>
+            </div>
+            
+            <!-- Row 2 -->
+            <div class="cert-item">
+                <img src="cert-sgs.png" alt="SGS Certified">
+                <span>SGS Certified</span>
+            </div>
+            <div class="cert-item">
+                <img src="cert-lawlabel.png" alt="LAW LABEL USA">
+                <span>LAW LABEL USA</span>
+            </div>
+            <div class="cert-item">
+                <img src="cert-jafza.png" alt="JAFZA Approved">
+                <span>JAFZA Approved</span>
+            </div>
+            
+            <!-- Row 3 -->
+            <div class="cert-item">
+                <img src="cert-amazon.png" alt="Amazon QA">
+                <span>Amazon QA</span>
+            </div>
+            <div class="cert-item">
+                <img src="cert-walmart.png" alt="Walmart QA">
+                <span>Walmart QA</span>
+            </div>
+            <div class="cert-item">
+                <img src="cert-dha.png" alt="DHA Compliant">
+                <span>DHA Compliant</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Product Categories Section -->
+    <section class="product-categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Baby Product Categories</h2>
+                <div class="underline"></div>
+                <p>Explore our wide range of premium baby products</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="category-car-seats.jpg" alt="Baby Car Seats">
+                    </div>
+                    <h3>Baby Car Seats</h3>
+                    <a href="products.html#car-seats" class="btn-text">View Products <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="category-strollers.jpg" alt="Baby Strollers">
+                    </div>
+                    <h3>Baby Strollers</h3>
+                    <a href="products.html#strollers" class="btn-text">View Products <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="category-play-yards.jpg" alt="Play Yards">
+                    </div>
+                    <h3>Play Yards</h3>
+                    <a href="products.html#play-yards" class="btn-text">View Products <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="category-highchairs.jpg" alt="Highchairs">
+                    </div>
+                    <h3>Highchairs</h3>
+                    <a href="products.html#highchairs" class="btn-text">View Products <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="category-swings.jpg" alt="Swings">
+                    </div>
+                    <h3>Swings</h3>
+                    <a href="products.html#swings" class="btn-text">View Products <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="category-carriers.jpg" alt="Carriers">
+                    </div>
+                    <h3>Carriers</h3>
+                    <a href="products.html#carriers" class="btn-text">View Products <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="category-nursery.jpg" alt="Nursery">
+                    </div>
+                    <h3>Nursery</h3>
+                    <a href="products.html#nursery" class="btn-text">View Products <i class="fas fa-arrow-right"></i></a>
+                </div>
+             
+            </div>
+            <div class="view-all">
+                <a href="products.html" class="btn btn-primary">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Children Global</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>We proudly manufacture the highest quality range of children's products in JAFZA – Dubai, UAE. As the first baby gear manufacturer in the GCC, we specialize in creating products engineered and designed with ASTM and EN international safety standards.</p>
+                    <ul class="about-list">
+                        <li><i class="fas fa-check-circle"></i> The first and only baby gear manufacturer in the GCC</li>
+                        <li><i class="fas fa-check-circle"></i> The first producer of ASTM- and EN-certified baby car seats in the Middle East</li>
+                        <li><i class="fas fa-check-circle"></i> The first manufacturer of baby playpens, play yards, and pack-n-plays in the region</li>
+                        <li><i class="fas fa-check-circle"></i> OEM and ODM partner for leading American and European baby brands</li>
+                        <li><i class="fas fa-check-circle"></i> Innovative, unique, and trend-leading baby product designs tailored for global markets</li>
+                        <li><i class="fas fa-check-circle"></i> Backed by global logistics support and lowest customs duties for re-export from UAE</li>
+                        <li><i class="fas fa-check-circle"></i> Uncompromising on quality, safety, and children's happiness</li>
+                        <li><i class="fas fa-check-circle"></i> Our leadership and engineering teams each bring over 30 years of industry expertise in global baby product development, compliance, and brand collaboration</li>
+                    </ul>
+                    <a href="about.html" class="btn btn-primary">Learn More About Us</a>
+                </div>
+             
+            </div>
+        </div>
+    </section>
+
+    <!-- Factory Preview Section -->
+    <section class="factory-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Factory</h2>
+                <div class="underline"></div>
+                <p>Take a glimpse inside our state-of-the-art manufacturing facility in JAFZA, Dubai</p>
+            </div>
+            <div class="factory-gallery">
+                <div class="gallery-item">
+                    <img src="factory-1.jpg" alt="Factory Image 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="factory-2.jpg" alt="Factory Image 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="factory-3.jpg" alt="Factory Image 3">
+                </div>
+            </div>
+            <div class="view-all">
+                <a href="factory.html" class="btn btn-primary">Visit Our Factory Gallery</a>
+            </div>
+        </div>
+    </section>
+
+<!-- Highlighted Content Section -->
+<section class="highlighted-content">
+    <div class="container">
+        <div class="highlighted-item">
+            <h3>Why Children Global Factory for your products?</h3>
+            <div class="highlight-divider">⸻</div>
+            <p>Because we are the first baby gear manufacturer in the GCC and Middle East with full ASTM and EN certifications. Based in JAFZA – Dubai, we deliver premium-quality baby products through OEM and ODM solutions for globally renowned brands. From concept to production, our innovation, compliance, and efficiency make us the trusted partner for baby product excellence.</p>
+        </div>
+        
+        <div class="highlighted-item">
+            <h3>Why ASTM standards?</h3>
+            <div class="highlight-divider">⸻</div>
+            <p>ASTM standards are the gold benchmark for baby product safety in the U.S. and international markets. Compliance ensures our products meet the highest safety, durability, and performance criteria, giving our clients peace of mind and regulatory confidence.</p>
+        </div>
+        
+        <div class="highlighted-item">
+            <h3>Why EN standards?</h3>
+            <div class="highlight-divider">⸻</div>
+            <p>EN standards represent the European Union's strictest safety requirements. Our adherence to EN certification reflects our commitment to providing safe, child-friendly, and legally approved products for the European and global markets.</p>
+        </div>
+        
+        <div class="highlighted-item">
+            <h3>Why JAFZA?</h3>
+            <div class="highlight-divider">⸻</div>
+            <p>JAFZA (Jebel Ali Free Zone) is one of the world's most strategic trade hubs, offering world-class infrastructure, customs exemptions, and global logistics connectivity. Being in JAFZA gives us direct access to shipping routes, reduced costs, and faster delivery for our clients worldwide.</p>
+        </div>
+        
+        <div class="highlighted-item">
+            <h3>Why our 30+ years of knowledge matters?</h3>
+            <div class="highlight-divider">⸻</div>
+            <p>Our leadership team brings over three decades of experience in baby product design, engineering, and market research. This depth of industry knowledge ensures that every product we develop is technically advanced, globally compliant, and tailored to market trends — because children's safety deserves nothing less.</p>
+        </div>
+        
+        <div class="highlighted-item">
+            <h3>Why to use our Jebel Ali located logistic Company?</h3>
+            <div class="highlight-divider">⸻</div>
+            <p>Choosing Clarion Shipping Services LLC means partnering with a logistics provider that combines decades of experience with a comprehensive suite of services tailored to meet diverse shipping needs. Here's why Clarion stands out:</p>
+            
+            <h4>Global Reach with Local Expertise</h4>
+            <p>Established in 1996 and headquartered in Dubai Silicon Oasis, Clarion has expanded its footprint across the UAE, Oman, Qatar, Malaysia, and Singapore. This extensive network ensures seamless coordination and efficient handling of shipments worldwide.</p>
+            
+            <h4>Comprehensive Logistics Solutions</h4>
+            <p>Clarion offers a full spectrum of logistics services, including:</p>
+            <ul>
+                <li>Sea and Air Freight Forwarding: Handling both full container load (FCL) and less than container load (LCL) shipments.</li>
+                <li>Road and Rail Freight: Ensuring timely inland transportation.</li>
+                <li>Warehousing and Distribution: Providing secure storage and efficient distribution channels.</li>
+                <li>Customs Clearance: Streamlining import and export processes.</li>
+                <li>E-commerce Fulfillment: Offering end-to-end solutions for online businesses.</li>
+            </ul>
+            
+            <h4>Specialized Handling Capabilities</h4>
+            <p>Clarion is adept at managing complex and specialized shipments, including:</p>
+            <ul>
+                <li>Heavy Lifts & Oversized Cargo: Expertise in transporting large and heavy items.</li>
+                <li>Time-Critical Deliveries: Ensuring urgent shipments meet tight deadlines.</li>
+                <li>Liquid Logistics: Utilizing Flexi-Bags for efficient bulk liquid transportation.</li>
+            </ul>
+            
+            <h4>Commitment to Excellence</h4>
+            <p>With a team of over 200 professionals, Clarion emphasizes personalized customer service, ensuring each client receives tailored solutions. Their dedication to quality and efficiency has positioned them as a trusted partner in the logistics industry.</p>
+        </div>
+    </div>
+</section>
+    <!-- Additional Support Section -->
+    <section class="additional-support">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Additional Support</h2>
+                <div class="underline"></div>
+                <p>Beyond manufacturing, we actively support your brand's global expansion</p>
+            </div>
+            
+            <div class="support-grid">
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Global Expansion Support</h3>
+                    <p>We help you identify and connect with distributors, retailers, and key buyers in countries where your brand currently has no presence. Our established network and market expertise across the Middle East, Africa, and Asia allow us to open new markets quickly and strategically, accelerating your international growth.</p>
+                </div>
+                
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovative Product Design</h3>
+                    <p>We offer full support in developing unique product design ideas tailored to your brand identity. Our team specializes in integrating special features and added functions that enhance usability, safety, and market appeal — helping your brand stand out in a competitive global market.</p>
+                </div>
+                
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Brand Promotion Support</h3>
+                    <p>We don't just manufacture — we help elevate your brand visibility:</p>
+                    <ul>
+                        <li><strong>Dubai Mall Exposure:</strong> We offer opportunities to showcase your brand in The Dubai Mall, the world's most visited retail and lifestyle destination.</li>
+                        <li><strong>Dubai World Trade Centre Presence:</strong> We support brand promotion at international exhibitions and trade shows held at the Dubai World Trade Centre — connecting your products to global buyers, distributors, and industry leaders.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- CEO Section -->
+<section class="ceo-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Leadership</h2>
+            <div class="underline"></div>
+        </div>
+        
+        <div class="ceo-content">
+            <div class="ceo-image">
+                <img src="ceo.jpg" alt="Hamid Reza Ahmadi - CEO of Children Global">
+                <div class="ceo-credentials">
+                    <h3>Hamid Reza Ahmadi</h3>
+                    <p class="ceo-title">Founder & Chief Executive Officer</p>
+                </div>
+            </div>
+            
+            <div class="ceo-message">
+                <div class="message-header">
+                    <i class="fas fa-quote-left"></i>
+                    <h3>A Message From Our CEO</h3>
+                </div>
+                
+                <div class="message-content">
+                    <p>At Children Global, we believe the future of global trade belongs to those who act faster, smarter, and with fewer barriers. Today's brands are not only challenged by rising production costs and complex supply chains — they also face tariffs, logistical delays, and limited access to new markets. That's where we come in.</p>
+                    
+                    <p>Located in the heart of the Jebel Ali Free Zone in Dubai, Children Global offers international brands a powerful platform to produce, distribute, and expand globally — without the need to invest in infrastructure or face the risks of going solo. We do more than just support operations; we become your partner on the ground.</p>
+                    
+                    <div class="offerings-grid">
+                        <div class="offering-item">
+                            <i class="fas fa-industry"></i>
+                            <p>Manufacture in our certified facilities</p>
+                        </div>
+                        <div class="offering-item">
+                            <i class="fas fa-building"></i>
+                            <p>Build your own branded factory</p>
+                        </div>
+                        <div class="offering-item">
+                            <i class="fas fa-globe-asia"></i>
+                            <p>Distribute to new markets</p>
+                        </div>
+                        <div class="offering-item">
+                            <i class="fas fa-file-signature"></i>
+                            <p>Handle all legal formalities</p>
+                        </div>
+                        <div class="offering-item">
+                            <i class="fas fa-passport"></i>
+                            <p>Secure visas & residency</p>
+                        </div>
+                        <div class="offering-item">
+                            <i class="fas fa-shipping-fast"></i>
+                            <p>Manage global shipping</p>
+                        </div>
+                    </div>
+                    
+                    <p>Dubai's Jebel Ali is one of the world's most advanced trade zones, offering tax advantages, free repatriation of profits, zero customs duties on re-exports, and unmatched proximity to seaports, airports, and key regional markets.</p>
+                    
+                    <p class="closing-statement">By partnering with Children Global, you gain speed-to-market, lower operating costs, tariff avoidance, and full operational support — without losing control of your brand identity or quality.</p>
+                    
+                    <p class="signature-line">Let us be your trusted bridge to the world's fastest-growing markets.<br>
+                    <span>You create the brand — we bring it to the world.</span></p>
+                    
+
+                        <p>Hamid Reza Ahmadi<br>
+                        <span>Founder & CEO, Children Global</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CEO Contact Button -->
+<div class="ceo-contact-btn">
+    <a href="contact.html#ceo" class="btn btn-primary">
+        <i class="fas fa-envelope"></i> Contact Our CEO Directly
+    </a>
+</div>
+
+<style>
+    /* CEO Section Styles */
+    .ceo-section {
+        background: #f9f9f9;
+        padding: 5rem 0;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .ceo-content {
+        display: flex;
+        gap: 3rem;
+        align-items: flex-start;
+        max-width: 1200px;
+        margin: 3rem auto 0;
+    }
+    
+    .ceo-image {
+        flex: 1;
+        position: relative;
+        min-width: 300px;
+    }
+    
+    .ceo-image img {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .ceo-credentials {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        margin-top: -50px;
+        position: relative;
+        z-index: 2;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .ceo-credentials h3 {
+        color: #2b4c7e;
+        margin-bottom: 0.5rem;
+    }
+    
+    .ceo-title {
+        color: #666;
+        font-weight: 500;
+    }
+    
+    .ceo-message {
+        flex: 2;
+        background: white;
+        padding: 3rem;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .message-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .message-header i {
+        font-size: 2rem;
+        color: #2b4c7e;
+        opacity: 0.3;
+    }
+    
+    .message-header h3 {
+        color: #2b4c7e;
+        margin: 0;
+    }
+    
+    .message-content p {
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+        color: #444;
+    }
+    
+    .offerings-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+    
+    .offering-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        background: #f8f9fa;
+        border-radius: 6px;
+    }
+    
+    .offering-item i {
+        color: #2b4c7e;
+        font-size: 1.2rem;
+    }
+    
+    .offering-item p {
+        margin: 0;
+        font-weight: 500;
+    }
+    
+    .closing-statement {
+        font-weight: 600;
+        color: #333 !important;
+    }
+    
+    .signature-line {
+        font-style: italic;
+        margin-top: 2rem !important;
+    }
+    
+    .signature-line span {
+        font-weight: 600;
+        display: block;
+        margin-top: 0.5rem;
+    }
+    
+    .ceo-signature {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .ceo-signature img {
+        height: 50px;
+    }
+    
+    .ceo-signature p {
+        margin: 0;
+        font-weight: 600;
+    }
+    
+    .ceo-signature span {
+        font-weight: normal;
+        color: #666;
+    }
+    
+    .ceo-contact-btn {
+        text-align: center;
+        margin: 3rem auto;
+    }
+    
+    .ceo-contact-btn .btn {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+        display: inline-flex;
+        align-items: center;
+        transition: all 0.3s ease;
+    }
+    
+    .ceo-contact-btn .btn i {
+        margin-right: 8px;
+    }
+    
+    @media (max-width: 992px) {
+        .ceo-content {
+            flex-direction: column;
+        }
+        
+        .ceo-image {
+            width: 100%;
+        }
+        
+        .offerings-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Collaborate?</h2>
+                <p>Let's discuss how we can help bring your baby product vision to life</p>
+                <a href="contact.html" class="btn btn-primary">Contact Us Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Children Global Logo">
+                    <p>Made in UAE - Trusted Worldwide</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="products.html">Products</a></li>
+                            <li><a href="factory.html">Factory</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="products.html#car-seats">Baby Car Seats</a></li>
+                            <li><a href="products.html#strollers">Baby Strollers</a></li>
+                            <li><a href="products.html#play-yards">Play Yards</a></li>
+                            <li><a href="products.html#highchairs">Highchairs</a></li>
+                            <li><a href="products.html#swings">Swings</a></li>
+                            <li><a href="products.html#carriers">Carriers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-phone"></i> Tel: +971 (4) 882 3939</li>
+                            <li><i class="fas fa-mobile-alt"></i> Cell: +971 (55) 1000 939</li>
+                            <li><i class="fab fa-whatsapp"></i> WhatsApp: +971 (50) 888 1030</li>
+                            <li><i class="fas fa-envelope"></i> info@childrenglobal.com</li>
+                            <li><i class="fas fa-id-card"></i> Trade License: 8397257</li>
+                            <li><i class="fas fa-mailbox"></i> P.O. Box: 888888</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Children Global. All Rights Reserved.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/jafzaDXB" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/jafzadubai" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://ae.linkedin.com/company/jafza" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/jafzadubai" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <script src="slide.js"></script>
+    
+    <!-- Add this modal HTML before the closing </body> tag -->
+<div id="manufacturing-modal" class="manufacturing-modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2 id="modal-title">Manufacturing Options</h2>
+        <div id="children-products" class="product-list">
+            <h3>Children Products Manufacturing</h3>
+            <ul>
+                <li>Baby Car Seats</li>
+                <li>Baby Strollers</li>
+                <li>Play Yards</li>
+                <li>Highchairs</li>
+                <li>Swings</li>
+                <li>Carriers</li>
+                <li>Nursery Furniture</li>
+            </ul>
+            <a href="products.html" class="btn btn-primary">View Children Products</a>
+        </div>
+        <div id="other-products" class="product-list">
+            <h3>Other Products Manufacturing</h3>
+            <ul>
+                <li>Home Accessories</li>
+                <li>Kitchenware</li>
+                <li>Decorative Items</li>
+                <li>Storage Solutions</li>
+                <li>Pet Products</li>
+                <li>Office Supplies</li>
+                <li>Gardening Tools</li>
+            </ul>
+            <a href="other-product.html" class="btn btn-primary">View Other Products</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .manufacturing-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    
+    .modal-content {
+        background-color: #fff;
+        margin: 5% auto;
+        padding: 2rem;
+        border-radius: 8px;
+        width: 80%;
+        max-width: 700px;
+        position: relative;
+    }
+    
+    .close-modal {
+        position: absolute;
+        right: 1.5rem;
+        top: 1rem;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+    
+    .product-list {
+        display: none;
+    }
+    
+    .product-list.active {
+        display: block;
+    }
+    
+    .product-list ul {
+        columns: 2;
+        margin: 1.5rem 0;
+    }
+    
+    .product-list li {
+        margin-bottom: 0.5rem;
+    }
+    
+    @media (max-width: 768px) {
+        .modal-content {
+            width: 90%;
+            margin: 10% auto;
+        }
+        
+        .product-list ul {
+            columns: 1;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('manufacturing-modal');
+        const childrenOption = document.querySelector('[data-category="children"]');
+        const otherOption = document.querySelector('[data-category="other"]');
+        const closeModal = document.querySelector('.close-modal');
+        const childrenProducts = document.getElementById('children-products');
+        const otherProducts = document.getElementById('other-products');
+        const modalTitle = document.getElementById('modal-title');
+        
+        childrenOption.addEventListener('click', function(e) {
+            e.preventDefault();
+            modal.style.display = 'block';
+            childrenProducts.classList.add('active');
+            otherProducts.classList.remove('active');
+            modalTitle.textContent = 'Children Products Manufacturing';
+        });
+        
+        otherOption.addEventListener('click', function(e) {
+            e.preventDefault();
+            modal.style.display = 'block';
+            otherProducts.classList.add('active');
+            childrenProducts.classList.remove('active');
+            modalTitle.textContent = 'Other Products Manufacturing';
+        });
+        
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+    
+
+</script>
+<!-- Add this modal HTML before the closing </body> tag -->
+<div id="distribution-modal" class="distribution-modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        
+        <!-- Distribution Slides -->
+        <div class="distribution-slider">
+            <div class="slider-container">
+                <!-- Slide 1 -->
+                <div class="slide active">
+                    <div class="slide-content">
+                        <h2>We have Distributors in each and every country</h2>
+                        <p>Our extensive network ensures your products reach every market</p>
+                    </div>
+                    <div class="slide-image">
+                        <img src="Slide1.png" alt="Global distribution network">
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <div class="slide-content">
+                        <h2>Our distributors are the largest local distribution companies</h2>
+                        <p>Partnering with market leaders for maximum reach</p>
+                    </div>
+                    <div class="slide-image">
+                        <img src="Slide2.png" alt="Distribution partners">
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <div class="slide-content">
+                        <h2>We facilitate all import legal requirements</h2>
+                        <p>Compliance handled in every country for seamless market entry</p>
+                    </div>
+                    <div class="slide-image">
+                        <img src="Slide3.png" alt="Legal compliance">
+                    </div>
+                </div>
+                
+                <!-- Slide 4 -->
+                <div class="slide">
+                    <div class="slide-content">
+                        <h2>We ensure your brand leads the market</h2>
+                        <p>While strictly following your brand guidelines</p>
+                    </div>
+                    <div class="slide-image">
+                        <img src="Slide4.png" alt="Brand leadership">
+                    </div>
+                </div>
+                
+                <!-- Slide 5 -->
+                <div class="slide">
+                    <div class="slide-content">
+                        <h2>We know how to market your brand</h2>
+                        <p>Localized advertising and awareness campaigns in each country</p>
+                    </div>
+                    <div class="slide-image">
+                        <img src="Slide5.png" alt="Marketing expertise">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation Arrows -->
+            <button class="slider-arrow prev-arrow" aria-label="Previous slide">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-arrow next-arrow" aria-label="Next slide">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <!-- Navigation Dots -->
+            <div class="slider-dots">
+                <!-- Dots will be added via JavaScript -->
+            </div>
+        </div>
+        
+        <!-- Distribution Regions -->
+        <div class="distribution-regions">
+            <h2>Our Distribution Regions</h2>
+            <div class="regions-grid">
+                <a href="distribution.html#na" class="region-card">
+                    <img src="north-america.jpg" alt="North America">
+
+                </a>
+                <a href="distribution.html#sa" class="region-card">
+                    <img src="SA.png" alt="South America">
+
+                </a>
+                <a href="distribution.html#europe" class="region-card">
+                    <img src="europe.jpg" alt="Europe">
+
+                </a>
+                <a href="distribution.html#uk" class="region-card">
+                    <img src="uk.png" alt="United Kingdom">
+
+                </a>
+                <a href="distribution.html#me" class="region-card">
+                    <img src="me.png" alt="Middle East">
+
+                </a>
+                <a href="distribution.html#africa" class="region-card">
+                    <img src="africa.png" alt="Africa">
+
+                </a>
+            </div>
+        </div>
+        
+        <div class="modal-cta">
+            <a href="distribution.html" class="btn btn-primary">Learn More About Our Distribution</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Distribution Modal Styles */
+    .distribution-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        overflow-y: auto;
+    }
+    
+    .distribution-modal .modal-content {
+        background-color: #fff;
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+        min-height: 100vh;
+        position: relative;
+    }
+    
+    .distribution-modal .close-modal {
+        position: fixed;
+        right: 2rem;
+        top: 2rem;
+        font-size: 2.5rem;
+        color: white;
+        z-index: 1001;
+        cursor: pointer;
+        background: rgba(0,0,0,0.5);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Distribution Slider Styles */
+    .distribution-slider {
+        position: relative;
+        width: 100%;
+        height: 50vh;
+        min-height: 400px;
+        overflow: hidden;
+    }
+    
+    .distribution-slider .slider-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .distribution-slider .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        display: flex;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    
+    .distribution-slider .slide.active {
+        opacity: 1;
+        z-index: 1;
+    }
+    
+    .distribution-slider .slide-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    
+    .distribution-slider .slide-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    .distribution-slider .slide-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        color: white;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+    
+    .distribution-slider .slide-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        line-height: 1.2;
+        color: #2b4c7e ;
+    }
+    
+    .distribution-slider .slide-content p {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+        max-width: 700px;
+        color: #2E2E2E;
+    }
+    
+    /* Navigation Arrows */
+    .distribution-slider .slider-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.3);
+        color: white;
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        transition: all 0.3s ease;
+    }
+    
+    .distribution-slider .slider-arrow:hover {
+        background: rgba(255, 255, 255, 0.6);
+    }
+    
+    .distribution-slider .prev-arrow {
+        left: 30px;
+    }
+    
+    .distribution-slider .next-arrow {
+        right: 30px;
+    }
+    
+    /* Distribution Regions */
+    .distribution-regions {
+        padding: 4rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .distribution-regions h2 {
+        text-align: center;
+        margin-bottom: 3rem;
+        font-size: 2.2rem;
+        color: #2b4c7e;
+    }
+    
+    .regions-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+    
+    .region-card {
+        display: block;
+        position: relative;
+        height: 200px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+    
+    .region-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+    
+    .region-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .region-card h3 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        margin: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        color: white;
+        font-size: 1.5rem;
+    }
+    
+    .modal-cta {
+        text-align: center;
+        padding: 2rem;
+        margin-top: 2rem;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+        .distribution-slider .slide-content h2 {
+            font-size: 2rem;
+        }
+        
+        .distribution-slider .slide-content p {
+            font-size: 1.1rem;
+        }
+        
+        .distribution-slider {
+            height: 40vh;
+            min-height: 300px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .distribution-slider .slide-content h2 {
+            font-size: 1.8rem;
+        }
+        
+        .distribution-slider {
+            height: 35vh;
+            min-height: 250px;
+        }
+        
+        .distribution-slider .slider-arrow {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .distribution-slider .prev-arrow {
+            left: 15px;
+        }
+        
+        .distribution-slider .next-arrow {
+            right: 15px;
+        }
+        
+        .distribution-regions {
+            padding: 3rem 1rem;
+        }
+        
+        .regions-grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .distribution-slider {
+            height: 30vh;
+            min-height: 200px;
+        }
+        
+        .distribution-slider .slide-content h2 {
+            font-size: 1.5rem;
+        }
+        
+        .distribution-slider .slide-content {
+            padding: 1rem;
+        }
+        
+        .distribution-regions h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+        
+        .region-card {
+            height: 150px;
+        }
+        
+        .region-card h3 {
+            font-size: 1.2rem;
+            padding: 0.8rem;
+        }
+        
+        .distribution-modal .close-modal {
+            right: 1rem;
+            top: 1rem;
+            width: 40px;
+            height: 40px;
+            font-size: 1.8rem;
+        }
+    }
+</style>
+
+<script>
+    // Initialize Distribution Modal
+    document.addEventListener('DOMContentLoaded', function() {
+        const distributionCards = document.querySelectorAll('.category-card a[href="distribution.html"]');
+        const distributionModal = document.getElementById('distribution-modal');
+        const closeModal = distributionModal.querySelector('.close-modal');
+        
+        // Open modal when clicking on Distribution card
+        distributionCards.forEach(card => {
+            card.addEventListener('click', function(e) {
+                e.preventDefault();
+                distributionModal.style.display = 'block';
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+                initializeDistributionSlider();
+            });
+        });
+        
+        // Close modal
+        closeModal.addEventListener('click', function() {
+            distributionModal.style.display = 'none';
+            document.body.style.overflow = ''; // Re-enable scrolling
+        });
+        
+        // Close when clicking outside content
+        distributionModal.addEventListener('click', function(e) {
+            if (e.target === distributionModal) {
+                distributionModal.style.display = 'none';
+                document.body.style.overflow = ''; // Re-enable scrolling
+            }
+        });
+        
+        // Initialize slider functionality
+        function initializeDistributionSlider() {
+            const sliderContainer = distributionModal.querySelector('.slider-container');
+            const slides = distributionModal.querySelectorAll('.slide');
+            const prevArrow = distributionModal.querySelector('.prev-arrow');
+            const nextArrow = distributionModal.querySelector('.next-arrow');
+            const dotsContainer = distributionModal.querySelector('.slider-dots');
+            
+            let currentSlide = 0;
+            let slideInterval;
+            
+            // Create dots
+            slides.forEach((slide, index) => {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(index));
+                dotsContainer.appendChild(dot);
+            });
+            
+            const dots = distributionModal.querySelectorAll('.dot');
+            
+            // Start auto-sliding
+            startSlideShow();
+            
+            function startSlideShow() {
+                slideInterval = setInterval(nextSlide, 5000);
+            }
+            
+            function nextSlide() {
+                goToSlide((currentSlide + 1) % slides.length);
+            }
+            
+            function prevSlide() {
+                goToSlide((currentSlide - 1 + slides.length) % slides.length);
+            }
+            
+            function goToSlide(index) {
+                slides[currentSlide].classList.remove('active');
+                dots[currentSlide].classList.remove('active');
+                
+                currentSlide = index;
+                
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+                
+                // Reset timer when manually changing slides
+                clearInterval(slideInterval);
+                startSlideShow();
+            }
+            
+            // Event listeners for arrows
+            prevArrow.addEventListener('click', prevSlide);
+            nextArrow.addEventListener('click', nextSlide);
+            
+            // Pause on hover
+            sliderContainer.addEventListener('mouseenter', () => {
+                clearInterval(slideInterval);
+            });
+            
+            sliderContainer.addEventListener('mouseleave', startSlideShow);
+        }
+    });
+</script>
+</body>
+</html>

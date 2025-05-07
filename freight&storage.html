@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freight & Storage - Children Global | Logistics Solutions</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+     :root {
+    --primary-color: #2b4c7e;
+    --secondary-color: #567ebb;
+    --light-color: #ffffff;
+    --dark-color: #1a2a3a;
+    --gray-color: #f8f9fa;
+    --text-color: #333333;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+    --transition: all 0.3s ease;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --radius: 8px;
+    --gradient: linear-gradient(135deg, #2b4c7e 0%, #567ebb 100%);
+    --section-padding: 5rem 0;
+    --mobile-section-padding: 3rem 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Improved Header Styles */
+header {
+    background-color: var(--light-color);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo img {
+    height: 50px;
+    transition: var(--transition);
+    width: auto;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 0.8rem 1.2rem;
+    color: var(--text-color);
+    font-weight: 600;
+    font-family: var(--font-heading);
+    transition: var(--transition);
+    font-size: 0.95rem;
+    text-decoration: none;
+    border-radius: var(--radius);
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+    background: rgba(43, 76, 126, 0.05);
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    z-index: 1001;
+}
+
+/* Enhanced Hero Section */
+.freight-hero {
+    background: var(--gradient);
+    color: var(--light-color);
+    padding: var(--section-padding);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.freight-hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.freight-hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    opacity: 0.9;
+}
+
+/* Improved Content Sections */
+.section {
+    padding: var(--section-padding);
+    position: relative;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.section-header p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* Enhanced Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background-color: var(--light-color);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: rgba(43, 76, 126, 0.2);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+/* Improved Storage Solutions Section */
+.storage-solutions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.storage-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-top: 4px solid var(--primary-color);
+}
+
+.storage-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.highlight {
+    display: inline-block;
+    background: rgba(43, 76, 126, 0.1);
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+}
+
+.benefits-list {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.benefits-list li {
+    margin-bottom: 0.8rem;
+    padding-left: 2rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.benefits-list li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+/* Enhanced Features List */
+.features-list {
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.features-list li {
+    margin-bottom: 0;
+    padding: 1rem 1rem 1rem 2.5rem;
+    position: relative;
+    background: rgba(43, 76, 126, 0.03);
+    border-radius: var(--radius);
+}
+
+.features-list li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    color: var(--primary-color);
+}
+
+/* Improved CTA Section */
+.cta {
+    background: var(--gradient);
+    color: var(--light-color);
+    text-align: center;
+    padding: var(--section-padding);
+}
+
+.cta h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    opacity: 0.9;
+}
+
+/* Enhanced Button Styles */
+.btn {
+    display: inline-block;
+    padding: 0.9rem 2.2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+    font-size: 1rem;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--light-color);
+    border-color: var(--light-color);
+    transform: translateY(-3px);
+}
+
+/* Comprehensive Mobile Styles */
+@media (max-width: 992px) {
+    .freight-hero h1 {
+        font-size: 2.4rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .storage-solutions {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --section-padding: var(--mobile-section-padding);
+    }
+    
+    header {
+        height: 70px;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--light-color);
+        flex-direction: column;
+        transition: var(--transition);
+        z-index: 999;
+        padding: 2rem 1.5rem;
+        overflow-y: auto;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        margin-bottom: 0.5rem;
+    }
+    
+    .nav-menu a {
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .freight-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .freight-hero p {
+        font-size: 1.1rem;
+    }
+    
+    .features-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-card, .storage-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .freight-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .cta h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta p {
+        font-size: 1rem;
+    }
+}
+
+/* Accessibility Improvements */
+a:focus, button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    z-index: 1001;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Reset and Base Styles */
+:root {
+    --primary-color: #2b4c7e;
+    --secondary-color: #567ebb;
+    --light-color: #ffffff;
+    --dark-color: #1a2a3a;
+    --gray-color: #f8f9fa;
+    --text-color: #333333;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+    --transition: all 0.3s ease;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --radius: 8px;
+    --gradient: linear-gradient(135deg, #2b4c7e 0%, #567ebb 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: var(--font-body);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Fixed Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Fixed Header */
+header {
+    background-color: var(--light-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+/* Fixed Navigation */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li {
+    margin-left: 10px;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: var(--text-color);
+    font-weight: 500;
+    font-family: var(--font-heading);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+/* Fixed Mobile Menu */
+@media (max-width: 768px) {
+    .header-content {
+        padding: 0 15px;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: var(--light-color);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 20px;
+        transition: var(--transition);
+        z-index: 999;
+        overflow-y: auto;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+    
+    .nav-menu a {
+        padding: 15px;
+        width: 100%;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    /* Prevent body scrolling when menu is open */
+    body.menu-open {
+        overflow: hidden;
+        height: 100vh;
+    }
+}
+
+/* Fixed Content Sections */
+section {
+    width: 100%;
+    padding: 60px 0;
+}
+
+/* Fixed Hero Section */
+.freight-hero {
+    background: var(--gradient);
+    color: var(--light-color);
+    padding: 100px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* Fixed Footer and Other Sections */
+footer {
+    width: 100%;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 30px 0;
+    text-align: center;
+}
+
+/* Fixed Button Styles */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: 2px solid var(--primary-color);
+}
+
+/* Fixed Card Styles */
+.service-card {
+    background-color: var(--light-color);
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+/* Utility Classes for Layout Fixes */
+.full-width {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.no-overflow {
+    overflow: hidden;
+}
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="logo.png" alt="Children Global Logo">
+                    </a>
+                </div>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="factory.html">Factory</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="freight-hero">
+        <div class="container">
+            <h1 data-aos="fade-down">Freight & Storage Solutions</h1>
+            <p>From safe warehousing to fast global shipping—we handle your product logistics from end to end.</p>
+            <a href="contact.html" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Get Logistics Support</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Our Logistics Services</h2>
+                <p>Comprehensive solutions for your supply chain needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <h3>Sea Freight</h3>
+                    <p>Cost-effective ocean shipping solutions for all your cargo needs with global coverage.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>Air Freight</h3>
+                    <p>Fast and reliable air cargo services for time-sensitive shipments worldwide.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3>Warehousing</h3>
+                    <p>Secure storage facilities with inventory management and order fulfillment services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Storage Solutions Section -->
+    <section class="section" style="background-color: var(--gray-color);">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Flexible Storage Models – Built Around Your Business Needs</h2>
+                <p>We offer two professional storage solutions tailored for your business growth</p>
+            </div>
+            
+            <div class="storage-solutions">
+                <div class="storage-card" data-aos="fade-right">
+                    <span class="highlight">Option 1</span>
+                    <h3>Store in Our Facility</h3>
+                    <p>Use our ready-to-operate, secure storage facilities. Ideal for businesses that want to scale fast without upfront infrastructure costs.</p>
+                    <ul class="benefits-list">
+                        <li>Immediate availability</li>
+                        <li>Cost-effective monthly rates</li>
+                        <li>Full logistics support (inventory, shipping, packing)</li>
+                        <li>Temperature control, security, and 24/7 access</li>
+                        <li>Integrated with production and distribution units</li>
+                    </ul>
+                </div>
+                
+                <div class="storage-card" data-aos="fade-left">
+                    <span class="highlight">Option 2</span>
+                    <h3>We Build Your Own Storage Facility</h3>
+                    <p>For businesses that require full control, we can design and build a dedicated, professional warehouse according to your specifications.</p>
+                    <ul class="benefits-list">
+                        <li>Custom-built to your product requirements</li>
+                        <li>Long-term investment</li>
+                        <li>Branding and operational independence</li>
+                        <li>Located strategically near production or port</li>
+                        <li>Fully compliant with UAE safety and legal standards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Why Choose Our Logistics Services?</h2>
+            </div>
+            <div class="features-content">
+                <ul class="features-list">
+                    <li><strong>Strategic Location:</strong> Based in Jebel Ali Free Zone with direct access to Jebel Ali Port</li>
+                    <li><strong>Global Network:</strong> Established partners in all major markets worldwide</li>
+                    <li><strong>Customs Expertise:</strong> Streamlined customs clearance for fast turnaround</li>
+                    <li><strong>Advanced Tracking:</strong> Real-time shipment monitoring from origin to destination</li>
+                    <li><strong>Secure Storage:</strong> Climate-controlled warehouses with 24/7 security</li>
+                    <li><strong>Cost-Effective:</strong> Competitive rates with no hidden charges</li>
+                    <li><strong>Experienced Team:</strong> Logistics professionals with decades of industry experience</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2 data-aos="fade-down">Need Reliable Freight & Storage Solutions?</h2>
+            <p data-aos="fade-up" data-aos-delay="200">Our logistics experts are ready to optimize your supply chain and distribution network.</p>
+            <a href="contact.html" class="btn btn-primary" data-aos="fade-up" data-aos-delay="400">Request a Quote</a>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animation library
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-out-quart'
+        });
+
+        // Mobile Navigation Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            const menuIcon = menuToggle.querySelector('i');
+
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                
+                // Toggle between hamburger and close icon
+                if (navMenu.classList.contains('active')) {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-times');
+                } else {
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+
+            // Close menu when clicking on a link (for mobile)
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        menuIcon.classList.remove('fa-times');
+                        menuIcon.classList.add('fa-bars');
+                    }
+                });
+            });
+        });
+        
+    </script>
+</body>
+</html>

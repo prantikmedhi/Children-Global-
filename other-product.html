@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Children Global - Premium manufacturing services for a wide range of products beyond baby gear. From electronics to home goods, we produce quality products in UAE.">
+    <meta name="keywords" content="manufacturing, UAE factory, product manufacturing, electronics, home goods, kitchenware, office supplies">
+    <title>Other Products Manufacturing | Children Global</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        /* Hero Section */
+        .other-products-hero {
+            background: linear-gradient(rgba(43, 76, 126, 0.85), rgba(43, 76, 126, 0.85)), url('images/other-products-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 8rem 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .other-products-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .other-products-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        /* Directory Section */
+        .product-directory {
+            padding: 5rem 0;
+            background-color: #fff;
+        }
+        
+        .section-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-intro h2 {
+            font-size: 2.5rem;
+            color: #2b4c7e;
+            margin-bottom: 1rem;
+        }
+        
+        .section-intro p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            position: relative;
+        }
+        
+        #category-search {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            font-size: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        #category-search:focus {
+            outline: none;
+            border-color: #2b4c7e;
+        }
+        
+        .search-container i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #777;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .category-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .category-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .category-toggle {
+            width: 100%;
+            padding: 1.5rem;
+            text-align: left;
+            background: none;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .category-toggle:hover {
+            background: #f8f9fa;
+        }
+        
+        .category-toggle i {
+            color: #2b4c7e;
+            transition: transform 0.3s ease;
+        }
+        
+        .category-item.active .category-toggle i {
+            transform: rotate(180deg);
+        }
+        
+        .category-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #f8f9fa;
+        }
+        
+        .category-item.active .category-content {
+            max-height: 1000px;
+            border-top: 1px solid #eee;
+        }
+        
+        .category-content ul {
+            padding: 1rem 1.5rem;
+        }
+        
+        .category-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .category-content a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #555;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+        
+        .category-content a:hover {
+            background: white;
+            color: #2b4c7e;
+            padding-left: 1.2rem;
+        }
+        
+        .view-more {
+            text-align: center;
+        }
+        
+        .view-more-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            background: #2b4c7e;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .view-more-btn:hover {
+            background: #1e3a6b;
+            transform: translateY(-2px);
+        }
+        
+        .view-more-btn i {
+            margin-right: 0.5rem;
+        }
+        
+        /* Manufacturing Benefits */
+        .manufacturing-benefits {
+            background: #f8f9fa;
+            padding: 5rem 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .benefits-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: #2b4c7e;
+            margin-bottom: 1.5rem;
+        }
+        
+        .benefit-card h3 {
+            margin-bottom: 1rem;
+            color: #2b4c7e;
+        }
+        
+        /* CTA Section */
+        .other-products-cta {
+            padding: 5rem 0;
+            text-align: center;
+            background: linear-gradient(rgba(43, 76, 126, 0.9), rgba(43, 76, 126, 0.9)), url('images/cta-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        
+        .other-products-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .other-products-cta p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.2rem;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: white;
+            color: #2b4c7e;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .other-products-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-intro h2 {
+                font-size: 2rem;
+            }
+            
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Menu Toggle Styles */
+.menu-toggle {
+    display: none; /* Hide by default on desktop */
+    cursor: pointer;
+    font-size: 1.5rem;
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.menu-toggle .fa-bars {
+    display: block;
+}
+
+.menu-toggle .fa-times {
+    display: none;
+}
+
+.menu-toggle.active .fa-bars {
+    display: none;
+}
+
+.menu-toggle.active .fa-times {
+    display: block;
+}
+
+/* Mobile menu styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        z-index: 1001;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: white;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        padding: 6rem 2rem 2rem;
+        transition: right 0.3s ease;
+        z-index: 1000;
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-menu li {
+        margin-bottom: 1.5rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="logo.png" alt="Children Global Logo">
+                    </a>
+                </div>
+                <nav>
+                    <div class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="factory.html">Factory</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="other-products-hero">
+        <div class="container">
+            <h1>Other Products Manufacturing</h1>
+            <p>Beyond baby gear, we manufacture a diverse range of high-quality products to meet global market demands with our UAE-based production facilities.</p>
+            <a href="#directory" class="btn btn-primary">Explore Our Products</a>
+        </div>
+    </section>
+
+    <!-- Product Directory Section -->
+    <section id="directory" class="product-directory">
+        <div class="container">
+            <div class="section-intro">
+                <h2>Our Product Categories</h2>
+                <p>From electronics to home goods, we offer comprehensive manufacturing solutions across diverse industries. Explore our extensive product categories below.</p>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" id="category-search" placeholder="Search categories or products...">
+                <i class="fas fa-search"></i>
+            </div>
+            
+            <div class="categories-grid" id="categories-container">
+                <!-- Wireless -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Wireless</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Wireless Phones</a></li>
+                            <li><a href="#">Wearables</a></li>
+                            <li><a href="#">Wireless Cases</a></li>
+                            <li><a href="#">Wireless Accessories</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Health & Personal Care -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Health & Personal Care</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Household Consumables</a></li>
+                            <li><a href="#">Nutrition & Food</a></li>
+                            <li><a href="#">Vitamins</a></li>
+                            <li><a href="#">Oral Care</a></li>
+                            <li><a href="#">Diet Supplements</a></li>
+                            <li><a href="#">Health Care</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- PC -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>PC</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Computing Mobile Hardware</a></li>
+                            <li><a href="#">Computing Desktop Hardware</a></li>
+                            <li><a href="#">Computing Accessories</a></li>
+                            <li><a href="#">Computing Peripherals</a></li>
+                            <li><a href="#">Computing Storage</a></li>
+                            <li><a href="#">Computing Components & Networking</a></li>
+                            <li><a href="#">Computing Memory</a></li>
+                            <li><a href="#">Keyboards</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Grocery -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Grocery</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Beverages</a></li>
+                            <li><a href="#">Baby & Infant</a></li>
+                            <li><a href="#">Snacks & Desserts</a></li>
+                            <li><a href="#">Condiments, Spreads & Cooking</a></li>
+                            <li><a href="#">Baking Supplies</a></li>
+                            <li><a href="#">Cereals</a></li>
+                            <li><a href="#">Pasta & Grains</a></li>
+                            <li><a href="#">Luxury Food & Drink</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Kitchen -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Kitchen</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Food Preparation</a></li>
+                            <li><a href="#">Hot Beverage Makers</a></li>
+                            <li><a href="#">Home Environment</a></li>
+                            <li><a href="#">Floorcare</a></li>
+                            <li><a href="#">Electric Cookware</a></li>
+                            <li><a href="#">Floorcare Accessories</a></li>
+                            <li><a href="#">Ironing</a></li>
+                            <li><a href="#">Toasters, Waffle & Crepe Makers</a></li>
+                            <li><a href="#">Cookware</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Beauty -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Beauty</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Skin Care</a></li>
+                            <li><a href="#">Hair Care & Styling</a></li>
+                            <li><a href="#">Bath & Shower</a></li>
+                            <li><a href="#">Make-up</a></li>
+                            <li><a href="#">Fragrance</a></li>
+                            <li><a href="#">Prestige Fragrance</a></li>
+                            <li><a href="#">Prestige Skin Care</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Home -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Home</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Housewares</a></li>
+                            <li><a href="#">Cookware</a></li>
+                            <li><a href="#">Linens</a></li>
+                            <li><a href="#">Tabletop</a></li>
+                            <li><a href="#">Home Storage</a></li>
+                            <li><a href="#">Home Decor</a></li>
+                            <li><a href="#">Tools, Gadgets & Barware</a></li>
+                            <li><a href="#">Kitchen Storage & Organization</a></li>
+                            <li><a href="#">Janitorial & Sanitation</a></li>
+                            <li><a href="#">Lighting</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Electronics -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Electronics</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Headphones</a></li>
+                            <li><a href="#">Audio</a></li>
+                            <li><a href="#">Batteries</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Pet Products -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Pet Products</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Pet Food</a></li>
+                            <li><a href="#">Training & Behaviour</a></li>
+                            <li><a href="#">Habitats & Supplies</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Major Appliances -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Major Appliances</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Refrigeration</a></li>
+                            <li><a href="#">Laundry</a></li>
+                            <li><a href="#">Cooking</a></li>
+                            <li><a href="#">Built In Appliances</a></li>
+                            <li><a href="#">Dishwashers</a></li>
+                            <li><a href="#">Other major appliances</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Shoes -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Shoes</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Fashion shoes-Men</a></li>
+                            <li><a href="#">Fashion shoes-Women</a></li>
+                            <li><a href="#">Fashion shoes-Unisex Adults</a></li>
+                            <li><a href="#">Women's Junior</a></li>
+                            <li><a href="#">Sport shoes-Men</a></li>
+                            <li><a href="#">Athletic</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Camera -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Camera</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Handsfree</a></li>
+                            <li><a href="#">Film</a></li>
+                            <li><a href="#">ILC</a></li>
+                            <li><a href="#">Accessories</a></li>
+                            <li><a href="#">DVC</a></li>
+                            <li><a href="#">Lenses</a></li>
+                            <li><a href="#">Point & Shoot</a></li>
+                            <li><a href="#">Security</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Toys -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Toys</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Building Sets</a></li>
+                            <li><a href="#">Outdoor & Sports Toys</a></li>
+                            <li><a href="#">All Other</a></li>
+                            <li><a href="#">Dolls</a></li>
+                            <li><a href="#">Games & Puzzles</a></li>
+                            <li><a href="#">Action Figures & Accessories</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apparel -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Apparel</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Men's Tops</a></li>
+                            <li><a href="#">Eyewear</a></li>
+                            <li><a href="#">Men's Bottoms</a></li>
+                            <li><a href="#">Men's Underwear</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Sports -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Sports</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Exercise & Fitness</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Personal Care Appliances -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Personal Care Appliances</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Shaving & Hair Removal Appliances</a></li>
+                            <li><a href="#">Oral Care Appliances</a></li>
+                            <li><a href="#">Hair Care Appliances</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Home Entertainment -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Home Entertainment</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Televisions</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Luggage -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Luggage</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Bags</a></li>
+                            <li><a href="#">Luggage</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Tools -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Tools</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Plumbing and Bath</a></li>
+                            <li><a href="#">Hardware</a></li>
+                            <li><a href="#">Power Tools</a></li>
+                            <li><a href="#">Hand Tools</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Office Products -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Office Products</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Office Supplies</a></li>
+                            <li><a href="#">Printing Consumables</a></li>
+                            <li><a href="#">Writing Instruments and Accessories</a></li>
+                            <li><a href="#">Paper, Envelopes and Shipping Supplies</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Watches -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Watches</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Gents Wrist Watch</a></li>
+                            <li><a href="#">Ladies Wrist Watch</a></li>
+                            <li><a href="#">FOB Watch</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Furniture -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Furniture</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Home Office Furniture</a></li>
+                            <li><a href="#">Living Room Furniture</a></li>
+                            <li><a href="#">Bedroom Furniture</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Luxury Beauty -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Luxury Beauty</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Fragrance</a></li>
+                            <li><a href="#">Professional Salon & Spa</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Automotive -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Automotive</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Automotive Accessories</a></li>
+                            <li><a href="#">Automotive Equipment & Tools</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Outdoors -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Outdoors</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Outdoor Living</a></li>
+                            <li><a href="#">Outdoors</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Musical Instruments -->
+                <div class="category-item">
+                    <button class="category-toggle">
+                        <span>Musical Instruments</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="category-content">
+                        <ul>
+                            <li><a href="#">Sound and Recording</a></li>
+                            <li><a href="#">Microphone</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        
+        </div>
+    </section>
+
+    <!-- Manufacturing Benefits Section -->
+    <section class="manufacturing-benefits">
+        <div class="container">
+            <div class="section-intro">
+                <h2>Why Manufacture With Us?</h2>
+                <p>Our UAE-based manufacturing facilities offer unparalleled advantages for brands looking to produce high-quality products efficiently and cost-effectively.</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3>10% Tariff to USA</h3>
+                    <p>Enjoy significantly lower tariffs compared to manufacturing in China (270%) when exporting to the United States.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Global Certifications</h3>
+                    <p>Our products meet international standards including ASTM, EN, and other global certifications for quality assurance.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Strategic Location</h3>
+                    <p>Located in JAFZA, Dubai, we provide easy access to global markets with world-class logistics infrastructure.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Advanced Facilities</h3>
+                    <p>State-of-the-art manufacturing facilities equipped with the latest technology for diverse product categories.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Expert Team</h3>
+                    <p>30+ years of industry experience in product development, manufacturing, and global distribution.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>End-to-End Support</h3>
+                    <p>From design to distribution, we provide comprehensive support throughout your product lifecycle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="other-products-cta">
+        <div class="container">
+            <h2>Ready to Manufacture Your Products?</h2>
+            <p>Whether you're looking to produce a single product line or multiple categories, our team is ready to bring your vision to life with quality manufacturing in the UAE.</p>
+            <a href="contact.html" class="cta-btn">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Children Global Logo">
+                    <p>Made in UAE - Trusted Worldwide</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="products.html">Products</a></li>
+                            <li><a href="factory.html">Factory</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Manufacturing</h4>
+                        <ul>
+                            <li><a href="children-products.html">Children Products</a></li>
+                            <li><a href="other-products.html">Other Products</a></li>
+                            <li><a href="factory.html">Our Facility</a></li>
+                            <li><a href="certifications.html">Certifications</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-phone"></i> Tel: +971 (4) 882 3939</li>
+                            <li><i class="fas fa-mobile-alt"></i> Cell: +971 (55) 1000 939</li>
+                            <li><i class="fab fa-whatsapp"></i> WhatsApp: +971 (50) 888 1030</li>
+                            <li><i class="fas fa-envelope"></i> info@childrenglobal.com</li>
+                            <li><i class="fas fa-id-card"></i> Trade License: 8397257</li>
+                            <li><i class="fas fa-mailbox"></i> P.O. Box: 888888</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Children Global. All Rights Reserved.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/jafzaDXB" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/jafzadubai" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://ae.linkedin.com/company/jafza" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/jafzadubai" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script>
+    // Toggle category items
+    document.addEventListener('DOMContentLoaded', function() {
+        const categoryToggles = document.querySelectorAll('.category-toggle');
+        
+        categoryToggles.forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                const categoryItem = this.parentElement;
+                categoryItem.classList.toggle('active');
+                
+                // Close other open categories
+                if (categoryItem.classList.contains('active')) {
+                    document.querySelectorAll('.category-item').forEach(item => {
+                        if (item !== categoryItem && item.classList.contains('active')) {
+                            item.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        });
+        
+        // Search functionality
+        const categorySearch = document.getElementById('category-search');
+        if (categorySearch) {
+            categorySearch.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                const categories = document.querySelectorAll('.category-item');
+                
+                categories.forEach(category => {
+                    const categoryName = category.querySelector('.category-toggle span').textContent.toLowerCase();
+                    const subItems = category.querySelectorAll('.category-content a');
+                    let hasMatch = categoryName.includes(searchTerm);
+                    
+                    // Check sub-items if no match in category name
+                    if (!hasMatch) {
+                        subItems.forEach(item => {
+                            if (item.textContent.toLowerCase().includes(searchTerm)) {
+                                hasMatch = true;
+                            }
+                        });
+                    }
+                    
+                    // Show/hide category based on match
+                    if (hasMatch) {
+                        category.style.display = 'block';
+                        
+                        // Highlight matching text
+                        if (searchTerm.length > 0) {
+                            subItems.forEach(item => {
+                                const itemText = item.textContent;
+                                const regex = new RegExp(searchTerm, 'gi');
+                                const highlightedText = itemText.replace(regex, match => `<span class="highlight">${match}</span>`);
+                                item.innerHTML = highlightedText;
+                            });
+                        } else {
+                            // Remove highlighting when search is cleared
+                            subItems.forEach(item => {
+                                item.innerHTML = item.textContent;
+                            });
+                        }
+                    } else {
+                        category.style.display = 'none';
+                    }
+                });
+            });
+        }
+        
+        // View more button functionality
+        const viewMoreBtn = document.querySelector('.view-more-btn');
+        const hiddenItems = document.querySelectorAll('.category-item.hidden');
+
+        if (viewMoreBtn && hiddenItems.length > 0) {
+            viewMoreBtn.addEventListener('click', function() {
+                hiddenItems.forEach(item => item.classList.remove('hidden'));
+                viewMoreBtn.style.display = 'none';
+            });
+        }
+    });
+    
+    // Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            
+            // Toggle body overflow when menu is open
+            if (navMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+});
+</script>
+
+</body>
+</html>
