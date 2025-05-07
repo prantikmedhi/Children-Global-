@@ -1,0 +1,727 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Children Global - UAE's premier baby product manufacturer. Reach out to us for inquiries about our OEM/ODM services, factory tours, or product information.">
+    <meta name="keywords" content="contact baby products manufacturer, UAE manufacturer contact, OEM baby products, ODM services, children global contact">
+    <title>Contact Us - Children Global | Premium Baby Product Manufacturer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+<link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-hero {
+            background: linear-gradient(rgba(42, 76, 126, 0.8), rgba(42, 76, 126, 0.8)), url('images/contact-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-color);
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .contact-info-section {
+            background-color: var(--light-color);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background-color: var(--gray-color);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .contact-card p {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card a {
+            color: var(--primary-color);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .contact-card a:hover {
+            color: var(--secondary-color);
+        }
+
+        .form-wrapper {
+            background-color: var(--light-color);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(42, 76, 126, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-check {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-check input {
+            margin-right: 0.8rem;
+            margin-top: 0.3rem;
+        }
+
+        .error-message {
+            color: var(--danger-color);
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+        }
+
+        .success-message {
+            background-color: rgba(40, 167, 69, 0.1);
+            border: 1px solid var(--success-color);
+            color: var(--success-color);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .success-message i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 400px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Contact form */
+        
+        
+        /* Add to your existing style section */
+select.form-control:invalid {
+    color: #6c757d;
+}
+
+.form-control::placeholder {
+    color: #6c757d;
+    opacity: 0.6;
+}
+
+.btn-primary .button-loading {
+    display: none;
+}
+
+.btn-primary.is-loading .button-text {
+    display: none;
+}
+
+.btn-primary.is-loading .button-loading {
+    display: inline-block;
+}
+
+.form-check label {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.form-check a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="logo.png" alt="Children Global Logo">
+                    </a>
+                </div>
+                <nav>
+                    <div class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                     <li><a href="products.html">Products</a></li>
+                        <li><a href="factory.html">Factory</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our team</p>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <div class="underline"></div>
+                <p>We're here to answer any questions about our products and services</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>Tel: +971 (4) 882 3939</p>
+                    <p>Cell: +971 (55) 1000 939</p>
+                    <p>WhatsApp: +971 (50) 888 1030</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>General Inquiries:</p>
+                    <p><a href="mailto:info@childrenglobal.com">info@childrenglobal.com</a></p>
+
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>S10838, Jebel Ali Free Zone (JAFZA)</p>
+                    <p>Dubai, United Arab Emirates</p>
+                    <p>P.O. Box: 888888</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<section class="contact-form-section" style="background-color: var(--gray-color);">
+    <div class="container">
+        <div class="section-header">
+            <h2>Send Us a Message</h2>
+            <div class="underline"></div>
+            <p>Fill out the form below and we'll get back to you as soon as possible</p>
+        </div>
+        <div class="form-wrapper">
+            <form id="contactForm" novalidate>
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" class="form-control" required
+                           placeholder="Your full name">
+                    <div id="nameError" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" class="form-control" required
+                           placeholder="Your email address">
+                    <div id="emailError" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" class="form-control"
+                           placeholder="+971 50 123 4567">
+                </div>
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" class="form-control"
+                           placeholder="Your company (if applicable)">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <select id="subject" name="subject" class="form-control" required>
+                        <option value="" disabled selected>Select a subject</option>
+                        <option value="OEM/ODM Inquiry">OEM/ODM Inquiry</option>
+                        <option value="Product Information">Product Information</option>
+                        <option value="Factory Tour Request">Factory Tour Request</option>
+                        <option value="Partnership Opportunity">Partnership Opportunity</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <div id="subjectError" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" class="form-control" required
+                              placeholder="Your message..."></textarea>
+                    <div id="messageError" class="error-message"></div>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="consent" name="consent" required>
+                    <label for="consent">I agree to the processing of my personal data in accordance with the <a href="privacy.html" target="_blank">privacy policy</a></label>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <span class="button-text">Send Message</span>
+                    <span class="button-loading" style="display:none;">
+                        <i class="fas fa-spinner fa-spin"></i> Sending...
+                    </span>
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- CEO Section -->
+<section class="ceo-section" id="ceo">
+    <div class="container">
+        <div class="section-header">
+            <h2>Leadership</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="ceo-content">
+            <div class="ceo-image">
+                <img src="ceo.jpg" alt="Hamid Reza Ahmadi - CEO of Children Global">
+            </div>
+            <div class="ceo-info">
+                <h3>Hamid Reza Ahmadi</h3>
+                <p class="ceo-title">Chief Executive Officer</p>
+                <p class="ceo-bio">With over 30 years of experience in the baby products industry, Hamid Reza Ahmadi has led Children Global to become the leading manufacturer of premium baby products in the Middle East. His vision of combining safety, innovation, and quality has positioned the company as a trusted partner for global brands.</p>
+
+                <p>CEO office: 1903, Burj Khalifa </p>
+                <p>For direct inquiries to the CEO:</p>
+                <div class="ceo-contact-qr" style="margin-top: 1rem; text-align: center;">
+                    <img src="qr-code.png" alt="Scan to contact CEO" style="max-width: 150px; border: 1px solid #ddd; padding: 5px; background: white;">
+                    <p style="font-size: 0.8rem; margin-top: 0.5rem;">Scan to connect directly</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Location Map -->
+    <section class="location-map" style="background-color: var(--gray-color);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Location</h2>
+                <div class="underline"></div>
+                <p>Find us in Jebel Ali Free Zone (JAFZA), Dubai, UAE</p>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28852.631274150966!2d55.02431456957225!3d24.978088608113463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f0ecfcc0b1363%3A0xe0f72c727202bfac!2sJebel%20Ali%20Free%20Zone%20-%20Dubai!5e0!3m2!1sen!2sae!4v1683677226654!5m2!1sen!2sae" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <p><strong>Address:</strong> S10838, Jebel Ali Free Zone (JAFZA), Dubai, UAE</p>
+                <p><strong>P.O. Box:</strong> 888888</p>
+                <p><strong>Trade License Number:</strong> 8397257</p>
+            </div>
+        </div>
+    </section>
+
+ <!-- Business Hours -->
+<section class="business-hours">
+    <div class="container">
+        <div class="section-header">
+            <h2>Business Hours</h2>
+            <div class="underline"></div>
+        </div>
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+            <p><strong>Monday - Saturday:</strong> 9:00 AM - 6:00 PM</p>
+            <p><strong>Sunday:</strong> Closed</p>
+            <p>All times are Gulf Standard Time (GST / UTC+4)</p>
+        </div>
+    </div>
+</section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Children Global Logo">
+                    <p>Made in UAE - Trusted Worldwide</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="products.html">Products</a></li>
+                            <li><a href="factory.html">Factory</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="products.html#car-seats">Baby Car Seats</a></li>
+                            <li><a href="products.html#strollers">Baby Strollers</a></li>
+                            <li><a href="products.html#play-yards">Play Yards</a></li>
+                            <li><a href="products.html#highchairs">Highchairs</a></li>
+                            <li><a href="products.html#swings">Swings</a></li>
+                            <li><a href="products.html#carriers">Carriers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-phone"></i> Tel: +971 (4) 882 3939</li>
+                            <li><i class="fas fa-mobile-alt"></i> Cell: +971 (55) 1000 939</li>
+                            <li><i class="fab fa-whatsapp"></i> WhatsApp: +971 (50) 888 1030</li>
+                            <li><i class="fas fa-envelope"></i> info@childrenglobal.com</li>
+                            <li><i class="fas fa-id-card"></i> Trade License: 8397257</li>
+                            <li><i class="fas fa-mailbox"></i> P.O. Box: 888888</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Children Global. All Rights Reserved.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/jafzaDXB" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/jafzadubai" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://ae.linkedin.com/company/jafza" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/jafzadubai" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (validateForm()) {
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const buttonText = submitBtn.querySelector('.button-text');
+                const buttonLoading = submitBtn.querySelector('.button-loading');
+                
+                // Show loading state
+                submitBtn.disabled = true;
+                buttonText.style.display = 'none';
+                buttonLoading.style.display = 'inline-block';
+                
+                // Prepare form data
+                const formData = {
+                    name: document.getElementById('name').value.trim(),
+                    email: document.getElementById('email').value.trim(),
+                    phone: document.getElementById('phone').value.trim() || 'Not provided',
+                    company: document.getElementById('company').value.trim() || 'Not provided',
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value.trim(),
+                    date: new Date().toLocaleString('en-US', {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    })
+                };
+                
+                // Send email via Brevo
+                sendEmailViaBrevo(formData)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        showSuccessMessage();
+                        contactForm.reset();
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        showErrorMessage(`Failed to send message. ${error.message || 'Please try again later or contact us directly.'}`);
+                    })
+                    .finally(() => {
+                        // Reset button state
+                        submitBtn.disabled = false;
+                        buttonText.style.display = 'inline-block';
+                        buttonLoading.style.display = 'none';
+                    });
+            }
+        });
+    }
+    
+    function validateForm() {
+        let isValid = true;
+        resetErrorMessages();
+        
+        // Validate name
+        const name = document.getElementById('name').value.trim();
+        if (!name) {
+            showError('nameError', 'Please enter your name');
+            isValid = false;
+        }
+        
+        // Validate email
+        const email = document.getElementById('email').value.trim();
+        if (!email) {
+            showError('emailError', 'Please enter your email');
+            isValid = false;
+        } else if (!isValidEmail(email)) {
+            showError('emailError', 'Please enter a valid email address');
+            isValid = false;
+        }
+        
+        // Validate subject
+        const subject = document.getElementById('subject').value;
+        if (!subject) {
+            showError('subjectError', 'Please select a subject');
+            isValid = false;
+        }
+        
+        // Validate message
+        const message = document.getElementById('message').value.trim();
+        if (!message) {
+            showError('messageError', 'Please enter your message');
+            isValid = false;
+        }
+        
+        // Validate consent
+        const consent = document.getElementById('consent').checked;
+        if (!consent) {
+            alert('Please agree to the privacy policy to continue');
+            isValid = false;
+        }
+        
+        return isValid;
+    }
+    
+    function isValidEmail(email) {
+        const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return re.test(String(email).toLowerCase());
+    }
+    
+    function resetErrorMessages() {
+        document.getElementById('nameError').textContent = '';
+        document.getElementById('emailError').textContent = '';
+        document.getElementById('subjectError').textContent = '';
+        document.getElementById('messageError').textContent = '';
+    }
+    
+    function showError(elementId, message) {
+        document.getElementById(elementId).textContent = message;
+    }
+    
+    async function sendEmailViaBrevo(formData) {
+        // Configuration - REPLACE WITH YOUR DETAILS
+        const config = {
+            apiKey: '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', // Get from Brevo dashboard
+            senderEmail: 'growvaadigital@gmail.com', // Verified sender in Brevo
+            senderName: ' Children Global Website Contact Form',
+            recipientEmail: 'prantikpratimmedhi@gmail.com', /
+            recipientName: ' Children Global '
+        };
+        
+        const emailData = {
+            sender: {
+                email: config.senderEmail,
+                name: config.senderName
+            },
+            to: [{
+                email: config.recipientEmail,
+                name: config.recipientName
+            }],
+            replyTo: {
+                email: formData.email,
+                name: formData.name
+            },
+            subject: `New Contact: ${formData.subject}`,
+            htmlContent: generateEmailHTML(formData),
+            headers: {
+                'X-Mailin-custom': 'custom_header_1:custom_value_1'
+            }
+        };
+        
+        const response = await fetch('https://api.brevo.com/v3/smtp/email', {
+            method: 'POST',
+            headers: {
+                'accept': 'application/json',
+                'api-key': config.apiKey,
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(emailData)
+        });
+        
+        if (!response.ok) {
+            const errorData = await response.json().catch(() => ({}));
+            throw new Error(errorData.message || 'Email sending failed');
+        }
+        
+        return response;
+    }
+    
+    function generateEmailHTML(formData) {
+        return `
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>New Contact Form Submission</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 600px; margin: 20px auto; padding: 20px; border: 1px solid #ddd; }
+        .header { background-color: #2a4c7e; color: white; padding: 20px; text-align: center; }
+        .content { padding: 20px; }
+        .detail { margin-bottom: 15px; }
+        .label { font-weight: bold; color: #2a4c7e; display: inline-block; width: 120px; }
+        .message-box { background-color: #f5f5f5; padding: 15px; border-left: 4px solid #2a4c7e; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>New Contact Form Submission</h2>
+        </div>
+        <div class="content">
+            <div class="detail"><span class="label">Date:</span> ${formData.date}</div>
+            <div class="detail"><span class="label">From:</span> ${formData.name}</div>
+            <div class="detail"><span class="label">Email:</span> ${formData.email}</div>
+            <div class="detail"><span class="label">Phone:</span> ${formData.phone}</div>
+            <div class="detail"><span class="label">Company:</span> ${formData.company}</div>
+            <div class="detail"><span class="label">Subject:</span> ${formData.subject}</div>
+            
+            <div class="message-box">
+                <h3 style="margin-top: 0;">Message:</h3>
+                <p>${formData.message.replace(/\n/g, '<br>')}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+        `;
+    }
+    
+    function showSuccessMessage() {
+        const formWrapper = document.querySelector('.form-wrapper');
+        formWrapper.innerHTML = `
+            <div class="success-message" style="text-align: center; padding: 30px; background: #f8f9fa; border-radius: 8px;">
+                <i class="fas fa-check-circle" style="font-size: 48px; color: #28a745; margin-bottom: 20px;"></i>
+                <h2 style="color: #28a745;">Thank You!</h2>
+                <p style="font-size: 18px;">Your message has been sent successfully.</p>
+                <p>We'll get back to you soon.</p>
+                <div style="margin-top: 30px;">
+                    <button onclick="location.reload()" style="padding: 10px 20px; background: #2a4c7e; color: white; border: none; border-radius: 4px; cursor: pointer; margin-right: 10px;">
+                        Send Another Message
+                    </button>
+                    <a href="index.html" style="padding: 10px 20px; border: 1px solid #2a4c7e; color: #2a4c7e; border-radius: 4px; text-decoration: none; display: inline-block;">
+                        Return to Home
+                    </a>
+                </div>
+            </div>
+        `;
+    }
+    
+    function showErrorMessage(message) {
+        const formWrapper = document.querySelector('.form-wrapper');
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-message';
+        errorDiv.style.cssText = 'text-align: center; padding: 20px; background: #fff3f3; border: 1px solid #ffcccc; border-radius: 8px; margin-bottom: 20px;';
+        errorDiv.innerHTML = `
+            <i class="fas fa-exclamation-triangle" style="font-size: 36px; color: #dc3545; margin-bottom: 15px;"></i>
+            <h3 style="color: #dc3545;">Oops! Something went wrong</h3>
+            <p>${message}</p>
+            <button onclick="this.parentElement.remove()" style="padding: 8px 16px; background: #dc3545; color: white; border: none; border-radius: 4px; cursor: pointer; margin-top: 15px;">
+                Try Again
+            </button>
+        `;
+        
+        formWrapper.insertBefore(errorDiv, formWrapper.firstChild);
+    }
+});
+    </script>
+</body>
+</html>

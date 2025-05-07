@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Children Global - Global distribution network covering all continents and countries. We deliver your products worldwide.">
+    <meta name="keywords" content="global distribution, international shipping, baby products distribution, worldwide logistics">
+    <title>Global Distribution Network | Children Global</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        /* Distribution Page Styles */
+        .distribution-page {
+            padding: 5rem 0;
+            background-color: var(--gray-color);
+        }
+        
+        .distribution-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .distribution-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .distribution-header p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        
+        .continent-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .continent-card {
+            background-color: var(--light-color);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .continent-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .continent-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .continent-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .continent-card:hover .continent-image img {
+            transform: scale(1.05);
+        }
+        
+        .continent-content {
+            padding: 1.5rem;
+        }
+        
+        .continent-content h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .country-list {
+            columns: 2;
+            margin: 1rem 0;
+        }
+        
+        .country-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.2rem;
+            position: relative;
+            break-inside: avoid;
+        }
+        
+        .country-list li::before {
+            content: '\f058';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+        }
+        
+        .distribution-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .distribution-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        
+        .feature-card {
+            background-color: var(--light-color);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .country-list {
+                columns: 1;
+            }
+            
+            .continent-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .distribution-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="logo.png" alt="Children Global Logo">
+                    </a>
+                </div>
+                <nav>
+                    <div class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="factory.html">Factory</a></li>
+                        <li><a href="distribution.html" class="active">Distribution</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Distribution Page Content -->
+    <section class="distribution-page">
+        <div class="container">
+            <div class="distribution-header">
+                <h1>Our Global Distribution Network</h1>
+                <div class="underline"></div>
+                <p>We provide comprehensive distribution services across all continents, ensuring your products reach every market efficiently and effectively. Our network covers 150+ countries through local distribution partners.</p>
+            </div>
+
+            <div class="distribution-features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Worldwide Coverage</h3>
+                    <p>150+ countries across all continents with local distribution partners</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Efficient logistics network ensuring timely product delivery</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Legal Compliance</h3>
+                    <p>We handle all import requirements and certifications</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-store-alt"></i>
+                    </div>
+                    <h3>Retail Placement</h3>
+                    <p>Products placed in leading retail stores in each market</p>
+                </div>
+            </div>
+
+            <div class="continent-grid" id="na">
+                <!-- North America -->
+                <div class="continent-card">
+                    <div class="continent-image">
+                        <img src="north-america.jpg" alt="North America">
+                    </div>
+                    <div class="continent-content">
+                        <h2>North America</h2>
+                        <ul class="country-list">
+                            <li>United States</li>
+                            <li>Canada</li>
+                            <li>Mexico</li>
+                            <li>Greenland</li>
+                            <li>Puerto Rico</li>
+                            <li>Dominican Republic</li>
+                            <li>Cuba</li>
+                            <li>Haiti</li>
+                            <li>Jamaica</li>
+                            <li>Bahamas</li>
+                            <li>Trinidad and Tobago</li>
+                            <li>Belize</li>
+                            <li>Costa Rica</li>
+                            <li>El Salvador</li>
+                            <li>Guatemala</li>
+                            <li>Honduras</li>
+                            <li>Nicaragua</li>
+                            <li>Panama</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- South America -->
+                <div class="continent-card" id="sa">
+                    <div class="continent-image">
+                        <img src="SA.png" alt="South America">
+                    </div>
+                    <div class="continent-content">
+                        <h2>South America</h2>
+                        <ul class="country-list">
+                            <li>Argentina</li>
+                            <li>Bolivia</li>
+                            <li>Brazil</li>
+                            <li>Chile</li>
+                            <li>Colombia</li>
+                            <li>Ecuador</li>
+                            <li>Falkland Islands</li>
+                            <li>French Guiana</li>
+                            <li>Guyana</li>
+                            <li>Paraguay</li>
+                            <li>Peru</li>
+                            <li>Suriname</li>
+                            <li>Uruguay</li>
+                            <li>Venezuela</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Europe -->
+                <div class="continent-card" id="europe">
+                    <div class="continent-image">
+                        <img src="europe.jpg" alt="Europe">
+                    </div>
+                    <div class="continent-content">
+                        <h2>Europe</h2>
+                        <ul class="country-list">
+                            <li>Albania</li>
+                            <li>Andorra</li>
+                            <li>Austria</li>
+                            <li>Belarus</li>
+                            <li>Belgium</li>
+                            <li>Bosnia and Herzegovina</li>
+                            <li>Bulgaria</li>
+                            <li>Croatia</li>
+                            <li>Cyprus</li>
+                            <li>Czech Republic</li>
+                            <li>Denmark</li>
+                            <li>Estonia</li>
+                            <li>Finland</li>
+                            <li>France</li>
+                            <li>Germany</li>
+                            <li>Greece</li>
+                            <li>Hungary</li>
+                            <li>Iceland</li>
+                            <li>Ireland</li>
+                            <li>Italy</li>
+                            <li>Latvia</li>
+                            <li>Liechtenstein</li>
+                            <li>Lithuania</li>
+                            <li>Luxembourg</li>
+                            <li>Malta</li>
+                            <li>Moldova</li>
+                            <li>Monaco</li>
+                            <li>Montenegro</li>
+                            <li>Netherlands</li>
+                            <li>North Macedonia</li>
+                            <li>Norway</li>
+                            <li>Poland</li>
+                            <li>Portugal</li>
+                            <li>Romania</li>
+                            <li>Russia</li>
+                            <li>San Marino</li>
+                            <li>Serbia</li>
+                            <li>Slovakia</li>
+                            <li>Slovenia</li>
+                            <li>Spain</li>
+                            <li>Sweden</li>
+                            <li>Switzerland</li>
+                            <li>Ukraine</li>
+                            <li>United Kingdom</li>
+                            <li>Vatican City</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- United Kingdom -->
+<div class="continent-card" id="uk">
+    <div class="continent-image">
+        <img src="uk.png" alt="United Kingdom">
+    </div>
+    <div class="continent-content">
+        <h2>United Kingdom</h2>
+        <ul class="country-list">
+            <li>England</li>
+            <li>Scotland</li>
+            <li>Wales</li>
+            <li>Northern Ireland</li>
+            <li>Isle of Man</li>
+            <li>Guernsey</li>
+            <li>Jersey</li>
+            <li>Gibraltar</li>
+            <li>Bermuda</li>
+            <li>Cayman Islands</li>
+            <li>Falkland Islands</li>
+            <li>British Virgin Islands</li>
+            <li>Montserrat</li>
+            <li>Anguilla</li>
+            <li>Turks and Caicos Islands</li>
+            <li>Saint Helena</li>
+            <li>British Indian Ocean Territory</li>
+            <li>South Georgia and the South Sandwich Islands</li>
+            <li>Akrotiri and Dhekelia (on Cyprus)</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Middle East -->
+<div class="continent-card" id="me">
+    <div class="continent-image">
+        <img src="me.png" alt="Middle East">
+    </div>
+    <div class="continent-content">
+        <h2>Middle East</h2>
+        <ul class="country-list">
+            <li>Bahrain</li>
+            <li>Cyprus</li>
+            <li>Egypt</li>
+            <li>Iran</li>
+            <li>Iraq</li>
+            <li>Israel</li>
+            <li>Jordan</li>
+            <li>Kuwait</li>
+            <li>Lebanon</li>
+            <li>Oman</li>
+            <li>Palestine</li>
+            <li>Qatar</li>
+            <li>Saudi Arabia</li>
+            <li>Syria</li>
+            <li>Turkey</li>
+            <li>United Arab Emirates</li>
+            <li>Yemen</li>
+        </ul>
+    </div>
+</div>
+
+                <!-- Africa -->
+                <div class="continent-card" id="africa">
+                    <div class="continent-image">
+                        <img src="africa.png" alt="Africa">
+                    </div>
+                    <div class="continent-content">
+                        <h2>Africa</h2>
+                        <ul class="country-list">
+                            <li>Algeria</li>
+                            <li>Angola</li>
+                            <li>Benin</li>
+                            <li>Botswana</li>
+                            <li>Burkina Faso</li>
+                            <li>Burundi</li>
+                            <li>Cabo Verde</li>
+                            <li>Cameroon</li>
+                            <li>Central African Republic</li>
+                            <li>Chad</li>
+                            <li>Comoros</li>
+                            <li>Congo</li>
+                            <li>DR Congo</li>
+                            <li>Djibouti</li>
+                            <li>Egypt</li>
+                            <li>Equatorial Guinea</li>
+                            <li>Eritrea</li>
+                            <li>Eswatini</li>
+                            <li>Ethiopia</li>
+                            <li>Gabon</li>
+                            <li>Gambia</li>
+                            <li>Ghana</li>
+                            <li>Guinea</li>
+                            <li>Guinea-Bissau</li>
+                            <li>Ivory Coast</li>
+                            <li>Kenya</li>
+                            <li>Lesotho</li>
+                            <li>Liberia</li>
+                            <li>Libya</li>
+                            <li>Madagascar</li>
+                            <li>Malawi</li>
+                            <li>Mali</li>
+                            <li>Mauritania</li>
+                            <li>Mauritius</li>
+                            <li>Morocco</li>
+                            <li>Mozambique</li>
+                            <li>Namibia</li>
+                            <li>Niger</li>
+                            <li>Nigeria</li>
+                            <li>Rwanda</li>
+                            <li>Sao Tome and Principe</li>
+                            <li>Senegal</li>
+                            <li>Seychelles</li>
+                            <li>Sierra Leone</li>
+                            <li>Somalia</li>
+                            <li>South Africa</li>
+                            <li>South Sudan</li>
+                            <li>Sudan</li>
+                            <li>Tanzania</li>
+                            <li>Togo</li>
+                            <li>Tunisia</li>
+                            <li>Uganda</li>
+                            <li>Zambia</li>
+                            <li>Zimbabwe</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="distribution-cta">
+                <a href="contact.html" class="btn btn-primary">Contact Us for Distribution Details</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Children Global Logo">
+                    <p>Made in UAE - Trusted Worldwide</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="products.html">Products</a></li>
+                            <li><a href="factory.html">Factory</a></li>
+                            <li><a href="distribution.html">Distribution</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="products.html#car-seats">Baby Car Seats</a></li>
+                            <li><a href="products.html#strollers">Baby Strollers</a></li>
+                            <li><a href="products.html#play-yards">Play Yards</a></li>
+                            <li><a href="products.html#highchairs">Highchairs</a></li>
+                            <li><a href="products.html#swings">Swings</a></li>
+                            <li><a href="products.html#carriers">Carriers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-phone"></i> Tel: +971 (4) 882 3939</li>
+                            <li><i class="fas fa-mobile-alt"></i> Cell: +971 (55) 1000 939</li>
+                            <li><i class="fab fa-whatsapp"></i> WhatsApp: +971 (50) 888 1030</li>
+                            <li><i class="fas fa-envelope"></i> info@childrenglobal.com</li>
+                            <li><i class="fas fa-id-card"></i> Trade License: 8397257</li>
+                            <li><i class="fas fa-mailbox"></i> P.O. Box: 888888</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Children Global. All Rights Reserved.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/jafzaDXB" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/jafzadubai" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://ae.linkedin.com/company/jafza" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/jafzadubai" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
