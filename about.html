@@ -1,0 +1,669 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Children Global - The first and only baby gear manufacturer in the GCC. Learn about our manufacturing expertise, certifications, and commitment to quality.">
+    <meta name="keywords" content="baby products manufacturer, about Children Global, ASTM certified, EN certified, UAE manufacturer, baby gear company">
+    <title>About Us - Children Global | Premium Baby Product Manufacturer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+<link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        /* About Page Specific Styles */
+        .about-page-hero {
+            background: linear-gradient(rgba(42, 76, 126, 0.8), rgba(42, 76, 126, 0.8)), url('images/about-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-color);
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .mission-box, .vision-box {
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .mission-box {
+            background-color: var(--light-color);
+        }
+
+        .vision-box {
+            background-color: var(--light-accent);
+        }
+
+        .mission-box h3, .vision-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .mission-box i, .vision-box i {
+            font-size: 2rem;
+            margin-right: 1rem;
+            color: var(--primary-color);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            padding: 0 50px 50px 50px;
+            position: relative;
+            width: 50%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            padding: 1.5rem;
+            background-color: var(--light-color);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: -15px;
+            width: 30px;
+            height: 30px;
+            background-color: var(--light-color);
+            transform: rotate(45deg);
+            box-shadow: var(--shadow);
+            z-index: -1;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: -15px;
+            width: 30px;
+            height: 30px;
+            background-color: var(--light-color);
+            transform: rotate(45deg);
+            box-shadow: var(--shadow);
+            z-index: -1;
+        }
+
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .timeline-date {
+            color: var(--light-color);
+            background-color: var(--primary-color);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .team-member {
+            background-color: var(--light-color);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-img {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .member-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .team-member:hover .member-img img {
+            transform: scale(1.05);
+        }
+
+        .member-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .member-info h3 {
+            margin-bottom: 0.3rem;
+        }
+
+        .member-position {
+            color: var(--text-light);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 35px;
+            height: 35px;
+            margin: 0 5px;
+            border-radius: 50%;
+            background-color: var(--gray-color);
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .certification-item {
+            text-align: center;
+            background-color: var(--light-color);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .certification-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .certification-icon img {
+            width: 100%;
+            height: auto;
+        }
+
+        @media screen and (max-width: 768px) {
+            .mission-vision {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content::before,
+            .timeline-item:nth-child(even) .timeline-content::before {
+                display: none;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .certifications-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .team-grid,
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        
+        
+        
+        
+        
+                /* certification css */
+                
+                
+                
+            .certifications {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.certification-item {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.certification-item:hover {
+    transform: translateY(-5px);
+}
+
+.certification-badge {
+    margin-bottom: 20px;
+}
+
+.highlight {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c83cb;
+    padding: 10px 20px;
+    border: 2px solid #2c83cb;
+    border-radius: 50px;
+}
+
+.section-header .underline {
+    width: 80px;
+    height: 3px;
+    background: #2c83cb;
+    margin: 15px auto;
+}
+
+
+/* CEO contact button */
+.ceo-contact-btn {
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.ceo-contact-btn .btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.ceo-contact-btn .btn i {
+    margin-right: 8px;
+    transition: all 0.3s ease;
+}
+
+.ceo-contact-btn .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ceo-contact-btn .btn:hover i {
+    transform: translateX(3px);
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="logo.png" alt="Children Global Logo">
+                    </a>
+                </div>
+                <nav>
+                    <div class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html" class="active">About Us</a></li>
+                                          <li><a href="products.html">Products</a></li>
+                        </li>
+                        <li><a href="factory.html">Factory</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-page-hero">
+        <div class="container">
+            <h1>About Children Global</h1>
+            <p>The first and only baby gear manufacturer in the GCC and Middle East</p>
+        </div>
+    </section>
+
+    <!-- Main About Section -->
+    <section class="about-main">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Story</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Children Global was founded with a vision to become the leading manufacturer of premium baby products in the Middle East. Established in Dubai's Jebel Ali Free Zone (JAFZA), we've grown to become the first and only baby gear manufacturer in the GCC region.</p>
+                    <p>Our commitment to quality, safety, and innovation has made us the trusted partner for many leading American and European baby brands. We specialize in manufacturing a wide range of baby products including car seats, strollers, play yards, highchairs, swings, carriers, and nursery items – all designed and engineered to meet the highest international safety standards.</p>
+                    <p>With a team of experienced professionals and state-of-the-art manufacturing facilities, Children Global continues to set the benchmark for baby product manufacturing in the region.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission and Vision -->
+    <section class="mission-vision-section" style="background-color: var(--gray-color);">
+        <div class="container">
+            <div class="mission-vision">
+                <div class="mission-box">
+                    <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+                    <p>To manufacture the highest quality baby products that ensure safety, comfort, and happiness for children across the globe, while setting new standards for innovation and manufacturing excellence in the GCC region.</p>
+                </div>
+                <div class="vision-box">
+                    <h3><i class="fas fa-eye"></i> Our Vision</h3>
+                    <p>To become the global partner of choice for premium baby product manufacturing, recognized worldwide for our unwavering commitment to safety standards, innovative design, and manufacturing excellence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="certifications">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Certifications</h2>
+                <div class="underline"></div>
+                <p>We meet the highest international quality and safety standards through rigorous testing and compliance</p>
+            </div>
+            <div class="certifications-grid">
+                <div class="certification-item">
+                    <div class="certification-badge">
+                        <span class="highlight">LOWLABEL</span>
+                    </div>
+                    <h3>LOWLABEL Certified</h3>
+                    <p>Recognized for meeting strict chemical safety and environmental standards</p>
+                </div>
+                <div class="certification-item">
+                    <div class="certification-badge">
+                        <span class="highlight">ASTM</span>
+                    </div>
+                    <h3>ASTM International</h3>
+                    <p>Compliant with American Society for Testing and Materials safety standards</p>
+                </div>
+                <div class="certification-item">
+                    <div class="certification-badge">
+                        <span class="highlight">EN</span>
+                    </div>
+                    <h3>European Norms</h3>
+                    <p>Meeting all European safety, health and environmental requirements</p>
+                </div>
+                <div class="certification-item">
+                    <div class="certification-badge">
+                        <span class="highlight">GCC</span>
+                    </div>
+                    <h3>GCC Standardization</h3>
+                    <p>Certified for Gulf Cooperation Council countries' regulatory standards</p>
+                </div>
+                <div class="certification-item">
+                    <div class="certification-badge">
+                        <span class="highlight">UAE QM</span>
+                    </div>
+                    <h3>UAE Quality Mark</h3>
+                    <p>Recognized by Emirates Authority for Standardization & Metrology</p>
+                </div>
+                <div class="certification-item">
+                    <div class="certification-badge">
+                        <span class="highlight">SGS</span>
+                    </div>
+                    <h3>SGS Verified</h3>
+                    <p>World's leading inspection, verification, testing and certification company</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Leadership Team -->
+    <section class="leadership" id="leadership">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Leadership Team</h2>
+                <div class="underline"></div>
+                <p>Meet the experts behind Children Global's success</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="ceo.jpg" alt="Hamid Reza Ahmadi - CEO">
+                    </div>
+                    <div class="member-info">
+                        <h3>Hamid Reza Ahmadi</h3>
+                        <p class="member-position">Chief Executive Officer</p>
+                        <p>With over 30 years of experience in the baby products industry, Hamid leads our company's vision and strategic growth.</p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/hreza" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+       
+            </div>
+        </div>
+    </section>
+    
+        <!-- Add this right after the CEO section -->
+<div class="ceo-contact-btn" style="text-align: center; margin: 2rem 0;">
+    <a href="contact.html#ceo" class="btn btn-primary" style="padding: 12px 30px; font-size: 1.1rem;">
+        <i class="fas fa-envelope" style="margin-right: 8px;"></i> Contact With CEO
+    </a>
+</div>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose" style="background-color: var(--gray-color);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Children Global</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>First in GCC</h3>
+                    <p>The first and only baby gear manufacturer in the GCC region</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Certified Safety</h3>
+                    <p>ASTM and EN certified products that meet international safety standards</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Global Reach</h3>
+                    <p>Partnerships with leading brands across 25+ countries worldwide</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Manufacturing Excellence</h3>
+                    <p>State-of-the-art facilities producing premium quality products</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>Continuous product innovation and design improvements</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Trusted Partner</h3>
+                    <p>OEM and ODM solutions for leading American and European brands</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Logistics Support</h3>
+                    <p>Global logistics and reduced customs duties for re-export from UAE</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Expert Team</h3>
+                    <p>30+ years of industry expertise in product development and compliance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Partner With Us</h2>
+                <p>Let us help you bring your baby product vision to life</p>
+                <a href="contact.html" class="btn btn-primary">Contact Us Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Children Global Logo">
+                    <p>Made in UAE - Trusted Worldwide</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="products.html">Products</a></li>
+                            <li><a href="factory.html">Factory</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="products.html#car-seats">Baby Car Seats</a></li>
+                            <li><a href="products.html#strollers">Baby Strollers</a></li>
+                            <li><a href="products.html#play-yards">Play Yards</a></li>
+                            <li><a href="products.html#highchairs">Highchairs</a></li>
+                            <li><a href="products.html#swings">Swings</a></li>
+                            <li><a href="products.html#carriers">Carriers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-phone"></i> Tel: +971 (4) 882 3939</li>
+                            <li><i class="fas fa-mobile-alt"></i> Cell: +971 (55) 1000 939</li>
+                            <li><i class="fab fa-whatsapp"></i> WhatsApp: +971 (50) 888 1030</li>
+                            <li><i class="fas fa-envelope"></i> info@childrenglobal.com</li>
+                            <li><i class="fas fa-id-card"></i> Trade License: 8397257</li>
+                            <li><i class="fas fa-mailbox"></i> P.O. Box: 888888</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Children Global. All Rights Reserved.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/jafzaDXB" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/jafzadubai" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://ae.linkedin.com/company/jafza" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/jafzadubai" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
