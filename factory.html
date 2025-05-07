@@ -1,0 +1,620 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Children Global's state-of-the-art baby product manufacturing facility in JAFZA, Dubai - the first and only baby gear factory in the GCC region.">
+    <meta name="keywords" content="baby products factory, manufacturing facility, JAFZA factory, UAE manufacturer, baby gear production">
+    <title>Factory - Children Global | Premium Baby Product Manufacturer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        /* Factory Page Specific Styles */
+        .factory-hero {
+            background: linear-gradient(rgba(42, 76, 126, 0.8), rgba(42, 76, 126, 0.8)), url('images/factory-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-color);
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .facility-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .facility-feature {
+            background-color: var(--light-color);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .facility-feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .facility-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .capacity-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-item {
+            background-color: var(--light-color);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .stat-label {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .process-steps {
+            max-width: 900px;
+            margin: 3rem auto 0;
+        }
+
+        .process-step {
+            display: flex;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 25px;
+            top: 60px;
+            width: 2px;
+            height: calc(100% - 25px);
+            background-color: var(--primary-color);
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-right: 2rem;
+        }
+
+        .step-content {
+            padding-top: 0.5rem;
+        }
+
+        .step-content h3 {
+            margin-bottom: 0.8rem;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: var(--light-color);
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .equipment-section {
+            background-color: var(--light-color);
+            padding: 5rem 0;
+        }
+
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+
+        .equipment-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background-color: var(--gray-color);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .equipment-icon {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            background-color: var(--light-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .equipment-content h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .gallery-grid,
+            .facility-features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .capacity-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .equipment-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .facility-features {
+                grid-template-columns: 1fr;
+            }
+
+            .capacity-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="logo.png" alt="Children Global Logo">
+                    </a>
+                </div>
+                <nav>
+                    <div class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                      <li><a href="products.html">Products</a></li>
+                        <li><a href="factory.html" class="active">Factory</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="factory-hero">
+        <div class="container">
+            <h1>Our Manufacturing Facility</h1>
+            <p>Explore our state-of-the-art factory in JAFZA – Dubai, UAE</p>
+        </div>
+    </section>
+
+    <!-- Factory Overview -->
+    <section class="factory-overview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Factory Overview</h2>
+                <div class="underline"></div>
+                <p>Take a tour of the first and only baby gear manufacturing facility in the GCC region</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Children Global operates a world-class manufacturing facility in Dubai's Jebel Ali Free Zone (JAFZA). Our factory is equipped with the latest technology and machinery, enabling us to produce premium baby products that meet international safety standards.</p>
+                    <p>As the first baby gear manufacturer in the GCC, we've invested heavily in creating a facility that can handle every aspect of the manufacturing process – from design and prototyping to testing and quality assurance. Our integrated production lines ensure efficiency while maintaining the highest quality standards.</p>
+                    <p>The strategic location of our factory in JAFZA provides significant logistical advantages, allowing us to ship products globally with reduced customs duties and simplified export procedures.</p>
+                </div>
+                <div class="about-image">
+                    <img src="factory-6.jpg" alt="Children Global Factory Overview">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Factory Gallery -->
+    <section class="factory-gallery-section" style="background-color: var(--gray-color);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Factory Gallery</h2>
+                <div class="underline"></div>
+                <p>Images from our manufacturing facility</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="factory-1.jpg" alt="Physical & Chemical Test Lab">
+                </div>
+                <div class="gallery-item">
+                    <img src="factory-2.jpg" alt="Metal Part & Tube Processing">
+                </div>
+                <div class="gallery-item">
+                    <img src="factory-3.jpg" alt="Production Capacity Area">
+                </div>
+                <div class="gallery-item">
+                    <img src="factory-4.jpg" alt="Sewing Area">
+                </div>
+                <div class="gallery-item">
+                    <img src="factory-5.jpg" alt="Assembly Area">
+                </div>
+                <div class="gallery-item">
+                    <img src="factory-6.jpg" alt="Factory Exterior">
+                </div>
+            
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="close">&times;</span>
+            <img id="lightbox-img" src="" alt="Factory Image Enlarged">
+        </div>
+    </div>
+
+    <!-- Production Capacity -->
+    <section class="production-capacity">
+        <div class="container">
+            <div class="section-header">
+                <h2>Production Capacity</h2>
+                <div class="underline"></div>
+                <p>Our facility is equipped to handle large-scale manufacturing with precision</p>
+            </div>
+            <div class="capacity-stats">
+                <div class="stat-item">
+                    <div class="stat-number">500K+</div>
+                    <div class="stat-label">Annual Production Capacity</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15,000</div>
+                    <div class="stat-label">Square Meters Facility</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Skilled Workers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Export Countries</div>
+                </div>
+            </div>
+            <div class="facility-features">
+                <div class="facility-feature">
+                    <div class="facility-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Advanced Machinery</h3>
+                    <p>State-of-the-art equipment for precision manufacturing of all baby product components</p>
+                </div>
+                <div class="facility-feature">
+                    <div class="facility-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Testing Laboratory</h3>
+                    <p>In-house testing facilities to ensure compliance with ASTM and EN safety standards</p>
+                </div>
+                <div class="facility-feature">
+                    <div class="facility-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Design Studio</h3>
+                    <p>Dedicated space for product innovation, prototyping, and custom design development</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manufacturing Process -->
+    <section class="manufacturing-process" style="background-color: var(--gray-color);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Manufacturing Process</h2>
+                <div class="underline"></div>
+                <p>From concept to finished product</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Design & Engineering</h3>
+                        <p>Our process begins with product design and engineering, where our experienced team creates detailed blueprints and specifications based on market research and safety requirements.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Prototyping</h3>
+                        <p>We develop working prototypes of new products to test functionality, ergonomics, and design aesthetics before moving to full production.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Material Sourcing</h3>
+                        <p>We source high-quality, safe, and durable materials from trusted suppliers, ensuring all components meet our strict quality standards.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Production</h3>
+                        <p>Our production lines employ precision manufacturing techniques and are staffed by skilled workers who combine craftsmanship with technological efficiency.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Quality Control</h3>
+                        <p>Every product undergoes rigorous quality checks at multiple stages of production, with comprehensive safety testing before final approval.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3>Packaging & Shipping</h3>
+                        <p>Products are carefully packaged and prepared for shipping from our JAFZA facility, taking advantage of the strategic location for global distribution.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manufacturing Equipment -->
+    <section class="equipment-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Manufacturing Equipment</h2>
+                <div class="underline"></div>
+                <p>Advanced technology for precision manufacturing</p>
+            </div>
+            <div class="equipment-grid">
+                <div class="equipment-item">
+                    <div class="equipment-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="equipment-content">
+                        <h3>CNC Machines</h3>
+                        <p>Computer-controlled cutting and shaping machinery for precise metal and plastic components</p>
+                    </div>
+                </div>
+                <div class="equipment-item">
+                    <div class="equipment-icon">
+                        <i class="fas fa-fill-drip"></i>
+                    </div>
+                    <div class="equipment-content">
+                        <h3>Injection Molding</h3>
+                        <p>High-capacity injection molding machines for creating durable plastic components</p>
+                    </div>
+                </div>
+                <div class="equipment-item">
+                    <div class="equipment-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <div class="equipment-content">
+                        <h3>Textile Cutting & Sewing</h3>
+                        <p>Advanced fabric cutting and industrial sewing machines for soft goods manufacturing</p>
+                    </div>
+                </div>
+                <div class="equipment-item">
+                    <div class="equipment-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <div class="equipment-content">
+                        <h3>Testing Equipment</h3>
+                        <p>Specialized testing apparatus for crash testing, durability, and material safety verification</p>
+                    </div>
+                </div>
+                <div class="equipment-item">
+                    <div class="equipment-icon">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <div class="equipment-content">
+                        <h3>Powder Coating Line</h3>
+                        <p>Environmentally friendly powder coating system for metal frame components</p>
+                    </div>
+                </div>
+                <div class="equipment-item">
+                    <div class="equipment-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="equipment-content">
+                        <h3>Packaging Systems</h3>
+                        <p>Automated packaging equipment for efficient and secure product packaging</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Factory Location Advantages -->
+    <section class="location-advantages" style="background-color: var(--gray-color);">
+        <div class="container">
+            <div class="section-header">
+                <h2>JAFZA Location Advantages</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content">
+
+                <div class="about-text">
+                    <p>Our manufacturing facility is strategically located in Jebel Ali Free Zone (JAFZA), one of the world's leading free zones and a key logistics hub.</p>
+                    <ul class="about-list">
+                        <li><i class="fas fa-check-circle"></i> Direct access to Jebel Ali Port, the largest port in the Middle East</li>
+                        <li><i class="fas fa-check-circle"></i> Proximity to Al Maktoum International Airport for air freight</li>
+                        <li><i class="fas fa-check-circle"></i> 100% foreign ownership with no corporate taxes</li>
+                        <li><i class="fas fa-check-circle"></i> No import or export duties within the free zone</li>
+                        <li><i class="fas fa-check-circle"></i> Streamlined customs procedures for faster shipping</li>
+                        <li><i class="fas fa-check-circle"></i> Access to a skilled workforce</li>
+                        <li><i class="fas fa-check-circle"></i> World-class infrastructure and utilities</li>
+                        <li><i class="fas fa-check-circle"></i> Strategic position between Asian and European markets</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Factory Tour CTA -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Schedule a Factory Tour</h2>
+                <p>Interested in seeing our manufacturing facility in person? Contact us to arrange a visit</p>
+                <a href="contact.html" class="btn btn-primary">Request a Tour</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Children Global Logo">
+                    <p>Made in UAE - Trusted Worldwide</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="products.html">Products</a></li>
+                            <li><a href="factory.html">Factory</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="products.html#car-seats">Baby Car Seats</a></li>
+                            <li><a href="products.html#strollers">Baby Strollers</a></li>
+                            <li><a href="products.html#play-yards">Play Yards</a></li>
+                            <li><a href="products.html#highchairs">Highchairs</a></li>
+                            <li><a href="products.html#swings">Swings</a></li>
+                            <li><a href="products.html#carriers">Carriers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-phone"></i> Tel: +971 (4) 882 3939</li>
+                            <li><i class="fas fa-mobile-alt"></i> Cell: +971 (55) 1000 939</li>
+                            <li><i class="fab fa-whatsapp"></i> WhatsApp: +971 (50) 888 1030</li>
+                            <li><i class="fas fa-envelope"></i> info@childrenglobal.com</li>
+                            <li><i class="fas fa-id-card"></i> Trade License: 8397257</li>
+                            <li><i class="fas fa-mailbox"></i> P.O. Box: 888888</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                 <div class="footer-bottom">
+                <p>&copy; 2025 Children Global. All Rights Reserved.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/jafzaDXB" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/jafzadubai" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://ae.linkedin.com/company/jafza" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/jafzadubai" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
